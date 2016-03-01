@@ -317,6 +317,7 @@
         [self presentViewController:ipc animated:YES completion:nil];
     }else{
         DCLog(@"不支持照相");
+        return;
     }
 }
 
