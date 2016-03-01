@@ -92,7 +92,6 @@
             [formData appendPartWithFileData:data name:@"file" fileName:@"xxxx.png" mimeType:@"image/png"];
         } success:^(AFHTTPRequestOperation *operation, id responseObj) {
             if (success) {
-
                 NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:responseObj options:NSJSONReadingAllowFragments error:nil];
                 success(dict);
             }

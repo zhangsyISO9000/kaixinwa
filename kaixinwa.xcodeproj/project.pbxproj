@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D0B28881B80B70200FC1367 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0B28871B80B70200FC1367 /* KxMenu.m */; };
+		42459FD01C8530B400A8CB45 /* QKTitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42459FCF1C8530B400A8CB45 /* QKTitleScrollView.m */; };
 		7B240B721B413071000EF832 /* QKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B240B701B413071000EF832 /* QKLoginViewController.m */; };
 		7B240B731B413071000EF832 /* QKLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B240B711B413071000EF832 /* QKLoginViewController.xib */; };
 		7B240B771B41362C000EF832 /* QKRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B240B751B41362C000EF832 /* QKRegistViewController.m */; };
@@ -171,8 +172,6 @@
 		D99B25221B85852700BFF143 /* QKNotFoundNetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D99B25211B85852700BFF143 /* QKNotFoundNetView.m */; };
 		D9A226391B9D8560001EE8D9 /* QKQRScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A226381B9D8560001EE8D9 /* QKQRScanView.m */; };
 		D9A3587F1C0E9A8A00A4042D /* QKUploadIconTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A3587E1C0E9A8A00A4042D /* QKUploadIconTool.m */; };
-		D9A41C631B8D948300CA12A9 /* QKShareAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A41C611B8D948300CA12A9 /* QKShareAppViewController.m */; };
-		D9A41C641B8D948300CA12A9 /* QKShareAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9A41C621B8D948300CA12A9 /* QKShareAppViewController.xib */; };
 		D9A41C991B8DADAC00CA12A9 /* QKDiscoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A41C981B8DADAC00CA12A9 /* QKDiscoverController.m */; };
 		D9BA95671B5C9956009BF610 /* LJWKeyboardHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BA955C1B5C9956009BF610 /* LJWKeyboardHandler.m */; };
 		D9BA95681B5C9956009BF610 /* LJWKeyboardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BA955F1B5C9956009BF610 /* LJWKeyboardToolBar.m */; };
@@ -233,6 +232,8 @@
 /* Begin PBXFileReference section */
 		3D0B28861B80B70200FC1367 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		3D0B28871B80B70200FC1367 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
+		42459FCE1C8530B400A8CB45 /* QKTitleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKTitleScrollView.h; sourceTree = "<group>"; };
+		42459FCF1C8530B400A8CB45 /* QKTitleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKTitleScrollView.m; sourceTree = "<group>"; };
 		7B240B6F1B413071000EF832 /* QKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKLoginViewController.h; sourceTree = "<group>"; };
 		7B240B701B413071000EF832 /* QKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKLoginViewController.m; sourceTree = "<group>"; };
 		7B240B711B413071000EF832 /* QKLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QKLoginViewController.xib; sourceTree = "<group>"; };
@@ -540,9 +541,6 @@
 		D9A226381B9D8560001EE8D9 /* QKQRScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKQRScanView.m; sourceTree = "<group>"; };
 		D9A3587D1C0E9A8A00A4042D /* QKUploadIconTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKUploadIconTool.h; sourceTree = "<group>"; };
 		D9A3587E1C0E9A8A00A4042D /* QKUploadIconTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKUploadIconTool.m; sourceTree = "<group>"; };
-		D9A41C601B8D948300CA12A9 /* QKShareAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKShareAppViewController.h; sourceTree = "<group>"; };
-		D9A41C611B8D948300CA12A9 /* QKShareAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKShareAppViewController.m; sourceTree = "<group>"; };
-		D9A41C621B8D948300CA12A9 /* QKShareAppViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QKShareAppViewController.xib; sourceTree = "<group>"; };
 		D9A41C971B8DADAC00CA12A9 /* QKDiscoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKDiscoverController.h; sourceTree = "<group>"; };
 		D9A41C981B8DADAC00CA12A9 /* QKDiscoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKDiscoverController.m; sourceTree = "<group>"; };
 		D9BA955B1B5C9956009BF610 /* LJWKeyboardHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJWKeyboardHandler.h; sourceTree = "<group>"; };
@@ -918,6 +916,8 @@
 		7B7D85BD1B3FCED1007504B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				42459FCE1C8530B400A8CB45 /* QKTitleScrollView.h */,
+				42459FCF1C8530B400A8CB45 /* QKTitleScrollView.m */,
 				D90BD44B1BE892A10018B118 /* ImagePlayerView.h */,
 				D90BD44C1BE892A10018B118 /* ImagePlayerView.m */,
 				D9A226371B9D8560001EE8D9 /* QKQRScanView.h */,
@@ -1736,9 +1736,6 @@
 			children = (
 				D9FD7C631B69B1F400A517F9 /* QKMyTeskViewController.h */,
 				D9FD7C641B69B1F400A517F9 /* QKMyTeskViewController.m */,
-				D9A41C601B8D948300CA12A9 /* QKShareAppViewController.h */,
-				D9A41C611B8D948300CA12A9 /* QKShareAppViewController.m */,
-				D9A41C621B8D948300CA12A9 /* QKShareAppViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1874,7 +1871,6 @@
 				D9BA95691B5C9956009BF610 /* Resources.bundle in Resources */,
 				D947BB921B7DB75600765D2D /* UMSocialSDKResourcesNew.bundle in Resources */,
 				7B240B731B413071000EF832 /* QKLoginViewController.xib in Resources */,
-				D9A41C641B8D948300CA12A9 /* QKShareAppViewController.xib in Resources */,
 				D947BB8E1B7DB75600765D2D /* UMShareEditViewControlleriPad.xib in Resources */,
 				D947BB8D1B7DB75600765D2D /* UMShareEditViewController.xib in Resources */,
 				D9E15ABD1B4B7985003B25FA /* line@2x.png in Resources */,
@@ -1932,7 +1928,6 @@
 				D981BA211B42888C000B0EFA /* MJType.m in Sources */,
 				D92E33891B4394DB00A4A34B /* QKAccountTool.m in Sources */,
 				D98E15801B8EF65900E4F1C5 /* QKBackgroudTool.m in Sources */,
-				D9A41C631B8D948300CA12A9 /* QKShareAppViewController.m in Sources */,
 				D9BA956C1B5C9956009BF610 /* UIWindow+LJWPresentViewController.m in Sources */,
 				D98ED45F1B86CBB800F090BA /* QKMyShareObj.m in Sources */,
 				7B240B941B41400F000EF832 /* AFURLResponseSerialization.m in Sources */,
@@ -1970,6 +1965,7 @@
 				D988B79A1C044D2600C3E239 /* QKTestViewController.m in Sources */,
 				D981BA1B1B42888C000B0EFA /* MJArgument.m in Sources */,
 				D981BA1C1B42888C000B0EFA /* MJConst.m in Sources */,
+				42459FD01C8530B400A8CB45 /* QKTitleScrollView.m in Sources */,
 				D9FD7C521B69B1A800A517F9 /* QKModifyUserInfoViewController.m in Sources */,
 				7BFB84A61B40E8330001FA88 /* HMBadgeView.m in Sources */,
 				D9D90D6F1B44EC320071F068 /* QKProfileHeaderView.m in Sources */,

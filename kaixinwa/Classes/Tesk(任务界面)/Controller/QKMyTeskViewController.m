@@ -17,7 +17,6 @@
 #import "QKSignResult.h"
 #import "SDWebImageManager.h"
 #import "QKGetHappyPeaTool.h"
-#import "QKShareAppViewController.h"
 
 @interface QKMyTeskViewController ()
 @property(nonatomic,strong)QKCommonTaskButtonItem * uploadAvatar;
@@ -79,7 +78,7 @@
         share.detailImage = [UIImage imageNamed:@"plus-ten-beans-grey"];
         
     }
-    share.destVcClass = [QKShareAppViewController class];
+//    share.destVcClass = [QKShareAppViewController class];
     
     
     QKCommonTaskButtonItem * invite = [QKCommonTaskButtonItem itemWithTitle:@"邀请好友"];
