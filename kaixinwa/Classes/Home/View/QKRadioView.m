@@ -57,10 +57,11 @@
     }
     return self;
 }
-
+//点击更多
 -(void)onClick:(UIButton *)button
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:NotifacationToSkipRadioMore object:nil userInfo:@{@"url":@"http://101.200.173.111/kaixinwa2.0/phone.php/Radio/index"}];
+    NSString * url = [NSString stringWithFormat:@"%@%@/phone.php/Radio/index",kInterfaceStart,kVersion];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NotifacationToSkipRadioMore object:nil userInfo:@{@"url":url}];
 }
 -(void)tapView:(UITapGestureRecognizer *)tap
 {

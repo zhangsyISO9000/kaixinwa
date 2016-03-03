@@ -176,7 +176,6 @@
 - (void)clickReloadButton:(QKNotFoundNetView *)notFoundNetView
 {
     [self.myWebView loadRequest:self.currentRequest];
-    
         
     [notFoundNetView hideInOtherView:self.myWebView];
 

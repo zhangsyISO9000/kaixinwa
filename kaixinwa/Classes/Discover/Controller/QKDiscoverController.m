@@ -91,9 +91,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     if (0==indexPath.section) {
         if (0==indexPath.row) {
+            
             [self pushWebControllerWithUrl:happyRadioUrl];
             
         }else if (1 == indexPath.row){
@@ -120,7 +120,7 @@
     QKAccount * account = [QKAccountTool readAccount];
     
     if ([urlStr isEqualToString:timeLimitUrl]) {
-        NSString *strUrl = [NSString stringWithFormat:@"%@/uid/%@/token/%@",urlStr,account.uid,account.token];
+        NSString *strUrl = [NSString stringWithFormat:@"%@%@/%@/uid/%@/token/%@",kInterfaceStart,kVersion,urlStr,account.uid,account.token];
         QKTimeLimitDetailViewController *tldVC = [[QKTimeLimitDetailViewController alloc]init];
         tldVC.urlStr = strUrl;
         [self.navigationController pushViewController:tldVC animated:YES];
@@ -132,7 +132,7 @@
         [self.navigationController pushViewController:webVc animated:YES];
         
     }else{
-        NSString *strUrl = [NSString stringWithFormat:@"%@/uid/%@/token/%@",urlStr,account.uid,account.token];
+        NSString *strUrl = [NSString stringWithFormat:@"%@%@/%@/uid/%@/token/%@",kInterfaceStart,kVersion,urlStr,account.uid,account.token];
         QKHappyVideoController * webVc = [[QKHappyVideoController alloc]init];
         webVc.urlStr = strUrl;
         

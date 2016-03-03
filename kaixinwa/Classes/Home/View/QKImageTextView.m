@@ -68,7 +68,6 @@
     self.nameLabel.centerX = self.imageView.centerX;
     self.nameLabel.size =[self.nameLabel.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.nameLabel.font} context:nil].size;
     
-//    self.nameLabel.size = [self.nameLabel.text sizeWithAttributes:@{NSFontAttributeName:self.nameLabel.font}];
     self.nameLabel.y = CGRectGetMaxY(self.imageView.frame)+QKCellMargin/2;
 }
 
@@ -78,7 +77,6 @@
         case 1:
         case 2:
         case 3:
-//            DCLog(@"11111->%@->%@",self.game.gameurl,self.game.id_str);
             [[NSNotificationCenter defaultCenter] postNotificationName:NotifacationToSkipGameWeb object:nil userInfo:@{GameKey : self.game.gameurl,@"id": self.game.id_str}];
             break;
         case 4:

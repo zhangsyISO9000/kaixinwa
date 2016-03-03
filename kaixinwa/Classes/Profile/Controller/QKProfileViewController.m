@@ -38,13 +38,14 @@
     [super viewDidLoad];
     
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"kaixinwa"]];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImageName:@"shezhi" highImageName:@"shezhi" target:self action:@selector(setting)];
     QKAccount * account = [QKAccountTool readAccount];
     [self setupHeaderView];
     [self setupGroups];
     
     if (account) {
         [self setupRefresh];
-        self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImageName:@"shezhi" highImageName:@"shezhi" target:self action:@selector(setting)];
+        
         self.navigationItem.rightBarButtonItem.tintColor = [UIColor blackColor];
         //获取开心豆数量
         [QKGetHappyPeaTool getHappyPeaNum];
@@ -171,7 +172,7 @@
     HMCommonArrowItem * myOrder = [HMCommonArrowItem itemWithTitle:@"我的订单" icon:[UIImage imageNamed:@"wodedingdan"]];
     myOrder.operation = ^{
         QKTimeLimitDetailViewController * order = [[QKTimeLimitDetailViewController alloc]init];
-        NSString * string = [NSString stringWithFormat:@"%@/uid/%@/token/%@",myOrderUrl,account.uid,account.token];
+        NSString * string = [NSString stringWithFormat:@"%@%@/%@/uid/%@/token/%@",kInterfaceStart,kVersion,myOrderUrl,account.uid,account.token];
         order.urlStr = string;
         [wSelf.navigationController pushViewController:order animated:YES];
     };
@@ -197,7 +198,6 @@
         [nav setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
         
         [self presentViewController:nav animated:YES completion:nil];
-        
     }
     
 }
@@ -226,4 +226,5 @@
 {
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
+
 @end

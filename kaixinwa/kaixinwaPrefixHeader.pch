@@ -11,10 +11,12 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-    #import "UIView+Extension.h"
-    #import "UIImage+Extension.h"
-    #import "NSDate+MJ.h"
-    #import "UIBarButtonItem+Extension.h"
+#import "UIView+Extension.h"
+#import "UIImage+Extension.h"
+#import "NSDate+MJ.h"
+#import "UIBarButtonItem+Extension.h"
+#import "QKVersionInfoTool.h"
+
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
@@ -36,6 +38,13 @@
 //屏幕宽度
 #define QKScreenWidth [UIScreen mainScreen].bounds.size.width
 
+//默认版本
+#define kDefaultVersion @"v200r"
+//获取版本
+#define kVersion [QKVersionInfoTool versionInfo]?[QKVersionInfoTool versionInfo].data : kDefaultVersion
+//接口头
+#define kInterfaceStart @"http://101.200.173.111/kaixinwa2.0/"
+
 //注册参数
 #define UUID [NSUUID UUID].UUIDString
 #define MiYao @"U2FsdGVkX1+zY61T/9h6KxyTBWVwbNR9Z01QjZN5EmT5BzDIEROXMFb9it8VgTrWYippi/B79Y0u+ZXJMwSLXGo8imoz9OTrB3k0uhvjIEyi4pF27xCm/Cg0pW0T3SoS9oCORpIFF/600rCAvhDsMOADCKCBtvLhpL4YpLKHQ3/jqQFsjWF8YUVMc0x9LtPa3eeGQIFsdRDr2nSWMlnGQExvNvyKnfLWUrH+YkJDIJlYzXihdv32yMw+vCf/DDa2Oq4CU2BkzLqff4IjGmA/9+FP2SS19kDMzdf5e1DO132QBhHDrLy1ffrSIabFRHVfSVDsy1qZSsC7Ea24RdmQBQ=="
@@ -43,27 +52,37 @@
 #define MobAppSecret @"5da79d2a4f7f1b6874ae01ff2eed7e34"
 #pragma mark interface
 //登录接口
-#define LoginInterface @"http://101.200.173.111/kaixinwa2.0/Kxwapi/User/login"
-
-//@"http://101.200.173.163/qkhl_api/index.php/kxwapi/User/login"
+#define xLogin @"Kxwapi/User/login"
+#define LoginInterface [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,xLogin]
 
 //注册接口
-#define RegisteInterface @"http://101.200.173.163/qkhl_api/index.php/kxwapi/User/regist"
-#define RegisteInterfaceNew @"http://101.200.173.111/kaixinwa2.0/kxwaapi.php/User/regist"
+//#define RegisteInterface @"http://101.200.173.163/qkhl_api/index.php/kxwapi/User/regist"
+#define xRegiste @"kxwaapi.php/User/regist"
+#define RegisteInterfaceNew [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,xRegiste]
+
 //短信验证码
-#define SendSMSInterface @"http://101.200.173.163/qkhl_api/index.php/kxwapi/Sms/sendSMS"
-#define SendSMSInterfaceNew @"http://101.200.173.111/kaixinwa2.0/kxwaapi.php/User/modpwd"
+//#define SendSMSInterface @"http://101.200.173.163/qkhl_api/index.php/kxwapi/Sms/sendSMS"
+#define xSendSMS @"kxwaapi.php/User/modpwd"
+#define SendSMSInterfaceNew [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,xSendSMS]
 
 //开心蛙修改密码验证接口
-#define codeVerityInterface @"http://101.200.173.111/kaixinwa2.0/kxwaapi.php/User/checkUser"
+#define xCodeVerity @"kxwaapi.php/User/checkUser"
+#define codeVerityInterface [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,xCodeVerity]
+//getHome接口
+#define xGethome @"index.php/Kxwapi/Index/getHome"
+#define GetHomeInterface [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,xGethome]
 //每日签到接口
-#define SignEverydayInterface @"http://101.200.173.111/kaixinwa2.0/kxwaapi.php/Sign/doSign"
+#define xSignEveryday @"kxwaapi.php/Sign/doSign"
+#define SignEverydayInterface [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,xSignEveryday]
 //修改信息接口
-#define UpdataUserInfoInterface @"http://101.200.173.111/kaixinwa2.0/kxwaapi.php/User/updateInfo"
-
+#define xUpdataUserInfo @"kxwaapi.php/User/updateInfo"
+#define UpdataUserInfoInterface [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,xUpdataUserInfo]
 //获取开心豆接口
-#define GetHappyPeaInterface @"http://101.200.173.111/kaixinwa2.0/index.php/kxwapi/Beancount/getcount"
-
+#define xGetHappyPea @"index.php/kxwapi/Beancount/getcount"
+#define GetHappyPeaInterface [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,xGetHappyPea]
+//上传头像接口
+#define xUploadAvatar @"kxwaapi.php/User/upload_header"
+#define UploadAvatarInterface [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,xUploadAvatar]
 
 #define QKUserDefaults [NSUserDefaults standardUserDefaults]
 
@@ -80,13 +99,13 @@
 #define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
 
 //限时兑换
-#define timeLimitUrl @"http://101.200.173.111/kaixinwa2.0/mall.php/Index/index"
+#define timeLimitUrl @"mall.php/Index/index"
 //开心动画
-#define happyVideoUrl @"http://101.200.173.111/kaixinwa2.0/video.php/Index/index"
+#define happyVideoUrl @"video.php/Index/index"
 //开心电台
-#define happyRadioUrl @"http://101.200.173.111/kaixinwa2.0/phone.php/Radio/index"
+#define happyRadioUrl @"phone.php/Radio/index"
 //我的订单
-#define myOrderUrl @"http://101.200.173.111/kaixinwa2.0/mall.php/Index/order"
+#define myOrderUrl @"mall.php/Index/order"
 //开心游戏
 #define happyGameUrl @"http://101.201.176.9/kxw_game/index.html"
 
@@ -128,4 +147,5 @@
 #define NotifacationSuccessForRecharge @"rechargeFinished"
 //通知点击开始游戏
 #define BeginGameNotifacation @"beginGameNotifacation"
+
 #endif

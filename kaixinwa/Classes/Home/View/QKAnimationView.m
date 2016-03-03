@@ -68,7 +68,9 @@
 
 -(void)onClick:(UIButton*)sender
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:NotifacationToSkipAnimation object:nil userInfo:@{@"url":@"http://101.200.173.111/kaixinwa2.0/video.php"}];
+    //视频播放url
+    NSString * url = [NSString stringWithFormat:@"%@%@/video.php",kInterfaceStart,kVersion];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NotifacationToSkipAnimation object:nil userInfo:@{@"url":url}];
 }
 
 -(void)layoutSubviews

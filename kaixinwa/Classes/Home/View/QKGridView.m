@@ -70,9 +70,12 @@
 
 -(void)onClick:(UIButton*)button;
 {
+    NSString * url;
     switch (button.tag) {
         case 1:
-            [[NSNotificationCenter defaultCenter] postNotificationName:NotifacationToSkipTimeLimitMore object:nil userInfo:@{@"url":@"http://101.200.173.111/kaixinwa2.0/mall.php/Index/index"}];
+            url=[NSString stringWithFormat:@"%@%@/mall.php/Index/index",kInterfaceStart,kVersion];
+//            @"http://101.200.173.111/kaixinwa2.0/mall.php/Index/index"
+            [[NSNotificationCenter defaultCenter] postNotificationName:NotifacationToSkipTimeLimitMore object:nil userInfo:@{@"url":url}];
             break;
         case 2:
             [[NSNotificationCenter defaultCenter] postNotificationName:NotifacationToSkipGameMore object:nil userInfo:@{@"url":happyGameUrl}];

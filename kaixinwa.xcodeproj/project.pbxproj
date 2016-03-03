@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3D0B28881B80B70200FC1367 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0B28871B80B70200FC1367 /* KxMenu.m */; };
 		42459FD01C8530B400A8CB45 /* QKTitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42459FCF1C8530B400A8CB45 /* QKTitleScrollView.m */; };
+		4296AF981C86D741009B9EDF /* QKVersionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4296AF971C86D741009B9EDF /* QKVersionInfo.m */; };
+		4296AF9B1C86E191009B9EDF /* QKVersionInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4296AF9A1C86E191009B9EDF /* QKVersionInfoTool.m */; };
 		7B240B721B413071000EF832 /* QKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B240B701B413071000EF832 /* QKLoginViewController.m */; };
 		7B240B731B413071000EF832 /* QKLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B240B711B413071000EF832 /* QKLoginViewController.xib */; };
 		7B240B771B41362C000EF832 /* QKRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B240B751B41362C000EF832 /* QKRegistViewController.m */; };
@@ -234,6 +236,10 @@
 		3D0B28871B80B70200FC1367 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		42459FCE1C8530B400A8CB45 /* QKTitleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKTitleScrollView.h; sourceTree = "<group>"; };
 		42459FCF1C8530B400A8CB45 /* QKTitleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKTitleScrollView.m; sourceTree = "<group>"; };
+		4296AF961C86D741009B9EDF /* QKVersionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKVersionInfo.h; sourceTree = "<group>"; };
+		4296AF971C86D741009B9EDF /* QKVersionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKVersionInfo.m; sourceTree = "<group>"; };
+		4296AF991C86E191009B9EDF /* QKVersionInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKVersionInfoTool.h; sourceTree = "<group>"; };
+		4296AF9A1C86E191009B9EDF /* QKVersionInfoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKVersionInfoTool.m; sourceTree = "<group>"; };
 		7B240B6F1B413071000EF832 /* QKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKLoginViewController.h; sourceTree = "<group>"; };
 		7B240B701B413071000EF832 /* QKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKLoginViewController.m; sourceTree = "<group>"; };
 		7B240B711B413071000EF832 /* QKLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QKLoginViewController.xib; sourceTree = "<group>"; };
@@ -979,13 +985,17 @@
 		7B7D85C21B3FCED1007504B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7BFB848E1B40E7580001FA88 /* Common */,
 				D968C6611B82BEC00034C5E4 /* QKGetPeaCount.h */,
 				D968C6621B82BEC00034C5E4 /* QKGetPeaCount.m */,
 				D968C6631B82BEC00034C5E4 /* QKPeaCountData.h */,
 				D968C6641B82BEC00034C5E4 /* QKPeaCountData.m */,
-				7BFB848E1B40E7580001FA88 /* Common */,
 				D9945B9E1B844FD900C954A4 /* QKBaseResult.h */,
 				D9945B9F1B844FD900C954A4 /* QKBaseResult.m */,
+				4296AF961C86D741009B9EDF /* QKVersionInfo.h */,
+				4296AF971C86D741009B9EDF /* QKVersionInfo.m */,
+				4296AF991C86E191009B9EDF /* QKVersionInfoTool.h */,
+				4296AF9A1C86E191009B9EDF /* QKVersionInfoTool.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1947,6 +1957,7 @@
 				7B240B921B41400F000EF832 /* AFURLConnectionOperation.m in Sources */,
 				D9FD7C571B69B1A800A517F9 /* QKPickerView.m in Sources */,
 				D9573A071B54994D006ABB27 /* NewfeatureViewController.m in Sources */,
+				4296AF9B1C86E191009B9EDF /* QKVersionInfoTool.m in Sources */,
 				7B240B8E1B41400F000EF832 /* AFHTTPRequestOperationManager.m in Sources */,
 				D981BA1E1B42888C000B0EFA /* MJIvar.m in Sources */,
 				D9C034BC1C1911A400E4A017 /* QKGameFrame.m in Sources */,
@@ -2031,6 +2042,7 @@
 				D981BA241B42888C000B0EFA /* NSObject+MJKeyValue.m in Sources */,
 				D9E048C61C0D77E300CA651A /* QKHappyVideoController.m in Sources */,
 				D90BD4561BE8A20A0018B118 /* QKBottomView.m in Sources */,
+				4296AF981C86D741009B9EDF /* QKVersionInfo.m in Sources */,
 				D90BD4501BE898770018B118 /* QKGridView.m in Sources */,
 				D9FD7C6D1B69B26B00A517F9 /* QKSignResult.m in Sources */,
 				D9D90D751B4500E40071F068 /* QKBalanceView.m in Sources */,
@@ -2206,7 +2218,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkhl.kaixinwaAnswer1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "55fab029-32b0-4c50-a14f-4df8ee348a11";
+				PROVISIONING_PROFILE = "402d6578-52e2-46c6-9363-4189dcb7a0e0";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2237,7 +2249,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkhl.kaixinwaAnswer1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "55fab029-32b0-4c50-a14f-4df8ee348a11";
+				PROVISIONING_PROFILE = "402d6578-52e2-46c6-9363-4189dcb7a0e0";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -22,6 +22,7 @@
 #import "QKDataBaseTool.h"
 #import "UMessage.h"
 #import "QKTestPushViewController.h"
+#import "QKVersionInfoTool.h"
 
 @interface AppDelegate ()
 @property(nonatomic,strong)NSDictionary * userInfo;
@@ -29,10 +30,10 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Override point for customization after application launch.
+    [self getVersionFromServer];
     
     self.window = [[UIWindow alloc]init];
     self.window.frame = [UIScreen mainScreen].bounds;
@@ -88,7 +89,24 @@
     
     //建表
     [QKDataBaseTool creatTableForTask];
+    
+    
     return YES;
+}
+
+-(void)getVersionFromServer
+{
+    NSDictionary *bundleDic = [[NSBundle mainBundle] infoDictionary];
+    NSString * currentVersion = [bundleDic objectForKey:@"CFBundleShortVersionString"];
+    //获取服务器版本
+    NSDictionary * params = @{@"device_type":@"ios1",@"app_version":currentVersion};
+    [QKHttpTool get:@"http://101.200.173.111/kaixinwa2.0/index.php/kxwapi/index/version" params:params success:^(id responseObj) {
+        QKVersionInfo * version = [QKVersionInfo objectWithKeyValues:responseObj];
+//        DCLog(@"code-%@,data-%@,msg-%@",version.code,version.data,version.message);
+        [QKVersionInfoTool save:version];
+    } failure:^(NSError *error) {
+        DCLog(@"---%@",error);
+    }];
 }
 //QQ41D9B8EA
 //tencent1104787690

@@ -43,7 +43,7 @@
     _unique_code = unique_code;
     
     for (UIWebView * webView in self.webViews) {
-        NSString * urlStr = [NSString stringWithFormat:@"http://101.200.173.111/kaixinwa2.0/index.php/Phone/Answer/getanswer?unique_code=%@&tab=%zd",unique_code,webView.tag];
+        NSString * urlStr = [NSString stringWithFormat:@"%@%@/index.php/Phone/Answer/getanswer?unique_code=%@&tab=%zd",kInterfaceStart,kVersion,unique_code,webView.tag];
         NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
         [webView loadRequest:request];
     }

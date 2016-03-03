@@ -36,7 +36,10 @@
     self.tableView.bounces = NO;
     
     [self setupGroups];
-    [self setupFooter];
+    if ([QKAccountTool readAccount]) {
+        [self setupFooter];
+    }
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView:) name:UIApplicationWillEnterForegroundNotification object:nil];
 }
 -(void)refreshView:(NSNotification *)noti
@@ -143,9 +146,10 @@
     DCLog(@"点击退出");
     [MBProgressHUD showMessage:@"正在退出"];
     QKAccount * account = [QKAccountTool readAccount];
-//    [self performSelector:@selector(delayMethod) withObject:nil afterDelay:1.5];
-    [QKHttpTool post:@"http://101.200.173.111/kaixinwa2.0/mall.php/index/clearsession" params:@{@"uid":account.uid} success:^(id responseObj) {
-//        DCLog(@"%@",responseObj);
+    NSString * url = [NSString stringWithFormat:@"%@%@/mall.php/index/clearsession",kInterfaceStart,kVersion];
+    
+//    http://101.200.173.111/kaixinwa2.0/mall.php/index/clearsession"
+    [QKHttpTool post:url params:@{@"uid":account.uid} success:^(id responseObj) {
         [QKAccountTool deleteAccount];
         UIWindow * window = [UIApplication sharedApplication].keyWindow;
         QKLoginViewController* loginVc = [[QKLoginViewController alloc]init];
@@ -154,7 +158,14 @@
         [MBProgressHUD hideHUD];
         window.rootViewController = nav;
     } failure:^(NSError *error) {
-        DCLog(@"%@",error);
+        //失败也退出
+        [QKAccountTool deleteAccount];
+        UIWindow * window = [UIApplication sharedApplication].keyWindow;
+        QKLoginViewController* loginVc = [[QKLoginViewController alloc]init];
+        loginVc.index = 2;
+        UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:loginVc];
+        [MBProgressHUD hideHUD];
+        window.rootViewController = nav;
     }];
     
 }

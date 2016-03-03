@@ -261,6 +261,7 @@
     param.update_type = @"address";
     param.uid = account.uid;
     NSDictionary * paramDic = [param keyValues];
+//    NSString * url = [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,UpdataUserInfo];
     [QKHttpTool post:UpdataUserInfoInterface params:paramDic success:^(id responseObj) {
         QKReturnResult * results = [QKReturnResult objectWithKeyValues:responseObj];
         NSString * code = [results.code stringValue];

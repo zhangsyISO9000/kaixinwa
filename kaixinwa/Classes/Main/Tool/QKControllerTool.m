@@ -23,7 +23,6 @@
     
     // 获得当前打开软件的版本号
     NSString *currentVersion = [NSBundle mainBundle].infoDictionary[versionKey];
-    
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     if ([currentVersion isEqualToString:lastVersion]) {
         // 当前版本号 == 上次使用的版本：显示HMTabBarViewController

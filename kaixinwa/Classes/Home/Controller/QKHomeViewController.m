@@ -33,6 +33,7 @@
 #import "QKHomeRequestTool.h"
 #import "QKGameListViewController.h"
 
+
 @interface QKHomeViewController ()<ImagePlayerViewDelegate>
 @property(nonatomic,strong)NSMutableArray * lunbos;
 @property(nonatomic,weak)UIScrollView * scrollView;
@@ -64,7 +65,7 @@
     [self creatUI];
     //发送请求获取首页数据
     [QKHomeRequestTool postHomeResultSuccess:^(id responseObj) {
-//        DCLog(@"%@",responseObj);
+//        DCLog(@"---%@",responseObj);
         QKFirstHome * home = [QKFirstHome objectWithKeyValues:responseObj];
         for (QKLunbo * lunbo in home.data.lunbo) {
             [self.lunbos addObject:lunbo];
@@ -80,6 +81,7 @@
     }];
     //注册各种通知
     [self registNotifications];
+    
 }
 -(void)registNotifications
 {
@@ -119,6 +121,7 @@
         if (account.lasttime) {
             //发送签到请求
             NSDictionary * param = @{@"uid":account.uid};
+            
             [QKHttpTool post:SignEverydayInterface params:param success:^(id responseObj) {
                 QKSignResult * signResult =[QKSignResult objectWithKeyValues:responseObj];
                 NSString * code = [signResult.code stringValue];
@@ -163,15 +166,17 @@
 -(void)tapGood:(NSNotification *)noti
 {
     QKAccount * account = [QKAccountTool readAccount];
-    if(account){
-        QKTimeLimitDetailViewController * tldVc = [[QKTimeLimitDetailViewController alloc]init];
-        NSString * urlStr = [NSString stringWithFormat:@"http://101.200.173.111/kaixinwa2.0/mall.php/Index/details/id/%@/source/1/uid/%@/token/%@",noti.userInfo[@"gid"],account.uid,account.token];
-        tldVc.urlStr = urlStr;
-        
-        [self.navigationController pushViewController:tldVc animated:YES];
-    }else{
-        [self skipLoginViewController];
-    }
+//    if(account){
+//        
+//    }else{
+//        [self skipLoginViewController];
+//    }
+    QKTimeLimitDetailViewController * tldVc = [[QKTimeLimitDetailViewController alloc]init];
+    
+    NSString * urlStr = [NSString stringWithFormat:@"%@%@/mall.php/Index/details/id/%@/source/1/uid/%@/token/%@",kInterfaceStart,kVersion,noti.userInfo[@"gid"],account.uid,account.token];
+    tldVc.urlStr = urlStr;
+    
+    [self.navigationController pushViewController:tldVc animated:YES];
 }
 
 -(void)tapGoodMore:(NSNotification *)noti
@@ -182,7 +187,7 @@
     web.urlStr = strAll;
     [self.navigationController pushViewController:web animated:YES];
 }
-
+//开心电台显示更多
 -(void)tapMore:(NSNotification *)noti
 {
     QKAccount * account = [QKAccountTool readAccount];
@@ -191,12 +196,12 @@
     web.urlStr = strAll;
     [self.navigationController pushViewController:web animated:YES];
 }
+
 -(void)tapMoreVideo:(NSNotification *)noti
 {
     QKAccount * account = [QKAccountTool readAccount];
     QKHappyVideoController * web = [[QKHappyVideoController alloc]init];
      NSString * strAll = [NSString stringWithFormat:@"%@/Index/index/uid/%@/token/%@",noti.userInfo[@"url"],account.uid,account.token];
-    DCLog(@"%@",strAll);
     web.urlStr = strAll;
     [self.navigationController pushViewController:web animated:YES];
 }
@@ -204,7 +209,7 @@
 -(void)tapVideo:(NSNotification *)noti
 {
     QKHappyVideoController * webV = [[QKHappyVideoController alloc]init];
-    NSString * urlStr = [NSString stringWithFormat:@"http://101.200.173.111/kaixinwa2.0/video.php/Play/index/roomtypeid/%@/uid/%@/token/%@/type/%@",noti.userInfo[@"vid"],[QKAccountTool readAccount].uid,[QKAccountTool readAccount].token,noti.userInfo[@"type"]];
+    NSString * urlStr = [NSString stringWithFormat:@"%@%@/video.php/Play/index/roomtypeid/%@/uid/%@/token/%@/type/%@",kInterfaceStart,kVersion,noti.userInfo[@"vid"],[QKAccountTool readAccount].uid,[QKAccountTool readAccount].token,noti.userInfo[@"type"]];
     webV.urlStr = urlStr;
     [self.navigationController pushViewController:webV animated:YES];
     
@@ -212,7 +217,7 @@
 -(void)tapRadio:(NSNotification *)noti
 {
     QKWebViewController * webV = [[QKWebViewController alloc]init];
-    NSString * urlStr = [NSString stringWithFormat:@"http://101.200.173.111/kaixinwa2.0/phone.php/Radio/detail/id/%@/uid/%@/token/%@",noti.userInfo[@"id"],[QKAccountTool readAccount].uid,[QKAccountTool readAccount].token];
+    NSString * urlStr = [NSString stringWithFormat:@"%@%@/phone.php/Radio/detail/id/%@/uid/%@/token/%@",kInterfaceStart,kVersion,noti.userInfo[@"id"],[QKAccountTool readAccount].uid,[QKAccountTool readAccount].token];
     webV.urlStr = urlStr;
     [self.navigationController pushViewController:webV animated:YES];
 }
