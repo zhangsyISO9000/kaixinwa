@@ -10,6 +10,7 @@
 #import "QKLoginViewController.h"
 #import "QKAccount.h"
 #import "QKAccountTool.h"
+#import "QKRechargeViewController.h"
 
 @interface QKTimeLimitDetailViewController ()
 
@@ -55,10 +56,12 @@
 
 -(void)pushRechargeViewController
 {
-//    NSString * str = [NSString stringWithFormat:@"http://101.200.173.111/kaixinwa2.0/mall.php/Index/recharge?uid=%@",[QKAccountTool readAccount].uid];
-//    QKRechargeViewController * recharge = [[QKRechargeViewController alloc]init];
-//    recharge.urlStr = str;
-//    [self.navigationController pushViewController:recharge animated:YES];
+    NSString * str = [NSString stringWithFormat:@"%@%@/mall.php/Index/recharge?uid=%@",kInterfaceStart,kVersion,[QKAccountTool readAccount].uid];
+    if(![kVersion containsString:@"r"]){
+        QKRechargeViewController * recharge = [[QKRechargeViewController alloc]init];
+        recharge.urlStr = str;
+        [self.navigationController pushViewController:recharge animated:YES];
+    }
 }
 
 @end

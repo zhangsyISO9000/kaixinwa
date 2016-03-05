@@ -22,7 +22,7 @@
 #import "QKAccountTool.h"
 #import "QKProfileHVFrame.h"
 #import "QKTestViewController.h"
-//#import "QKRechargeViewController.h"
+#import "QKRechargeViewController.h"
 #import "QKTimeLimitDetailViewController.h"
 #import "UIImageView+WebCache.h"
 
@@ -205,11 +205,11 @@
 #pragma mark - 处理balanceView的代理方法
 - (void)balanceOnClickRecharge:(QKBalanceView *)balanceView
 {
-////    NSLog(@"去充值");
-//    NSString * str = [NSString stringWithFormat:@"http://101.200.173.111/kaixinwa2.0/mall.php/Index/recharge?uid=%@",[QKAccountTool readAccount].uid];
-//    QKRechargeViewController * webVc = [[QKRechargeViewController alloc]init];
-//    webVc.urlStr = str;
-//    [self.navigationController pushViewController:webVc animated:YES];
+//    NSLog(@"去充值");
+    NSString * str = [NSString stringWithFormat:@"%@%@/mall.php/Index/recharge?uid=%@",kInterfaceStart,kVersion,[QKAccountTool readAccount].uid];
+    QKRechargeViewController * webVc = [[QKRechargeViewController alloc]init];
+    webVc.urlStr = str;
+    [self.navigationController pushViewController:webVc animated:YES];
     
 }
 
@@ -217,7 +217,8 @@
 {
 //    NSLog(@"去商城");
     QKTimeLimitDetailViewController * shop = [[QKTimeLimitDetailViewController alloc]init];
-    NSString * string = [NSString stringWithFormat:@"%@/uid/%@/token/%@",timeLimitUrl,[QKAccountTool readAccount].uid,[QKAccountTool readAccount].token];
+    //修改
+    NSString * string = [NSString stringWithFormat:@"%@%@/%@/uid/%@/token/%@",kInterfaceStart,kVersion,timeLimitUrl,[QKAccountTool readAccount].uid,[QKAccountTool readAccount].token];
     shop.urlStr = string;
     [self.navigationController pushViewController:shop animated:YES];
 }

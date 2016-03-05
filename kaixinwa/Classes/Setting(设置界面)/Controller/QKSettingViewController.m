@@ -18,6 +18,7 @@
 #import "UIImageView+WebCache.h"
 #import "QKHttpTool.h"
 #import "AppDelegate.h"
+#import "QKPrice.h"
 
 @interface QKSettingViewController ()<UIAlertViewDelegate>
 @property(nonatomic,copy)NSURL * trackViewUrl;

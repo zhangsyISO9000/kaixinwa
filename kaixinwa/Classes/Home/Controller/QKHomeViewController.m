@@ -33,7 +33,6 @@
 #import "QKHomeRequestTool.h"
 #import "QKGameListViewController.h"
 
-
 @interface QKHomeViewController ()<ImagePlayerViewDelegate>
 @property(nonatomic,strong)NSMutableArray * lunbos;
 @property(nonatomic,weak)UIScrollView * scrollView;

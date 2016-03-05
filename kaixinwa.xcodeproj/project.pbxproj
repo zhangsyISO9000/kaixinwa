@@ -8,7 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3D0B28881B80B70200FC1367 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0B28871B80B70200FC1367 /* KxMenu.m */; };
+		42159E191C8814B00071490B /* QKRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42159E181C8814B00071490B /* QKRechargeViewController.m */; };
 		42459FD01C8530B400A8CB45 /* QKTitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42459FCF1C8530B400A8CB45 /* QKTitleScrollView.m */; };
+		4293CD271C89135300639833 /* ApiXml.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4293CD261C89135300639833 /* ApiXml.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4293CD2A1C89136000639833 /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4293CD291C89136000639833 /* WXUtil.mm */; };
+		4293CD2D1C89136C00639833 /* WechatPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4293CD2C1C89136C00639833 /* WechatPayManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4293CD301C8952CF00639833 /* QKPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 4293CD2F1C8952CF00639833 /* QKPrice.m */; };
 		4296AF981C86D741009B9EDF /* QKVersionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4296AF971C86D741009B9EDF /* QKVersionInfo.m */; };
 		4296AF9B1C86E191009B9EDF /* QKVersionInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4296AF9A1C86E191009B9EDF /* QKVersionInfoTool.m */; };
 		7B240B721B413071000EF832 /* QKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B240B701B413071000EF832 /* QKLoginViewController.m */; };
@@ -234,8 +239,18 @@
 /* Begin PBXFileReference section */
 		3D0B28861B80B70200FC1367 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		3D0B28871B80B70200FC1367 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
+		42159E171C8814B00071490B /* QKRechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKRechargeViewController.h; sourceTree = "<group>"; };
+		42159E181C8814B00071490B /* QKRechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKRechargeViewController.m; sourceTree = "<group>"; };
 		42459FCE1C8530B400A8CB45 /* QKTitleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKTitleScrollView.h; sourceTree = "<group>"; };
 		42459FCF1C8530B400A8CB45 /* QKTitleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKTitleScrollView.m; sourceTree = "<group>"; };
+		4293CD251C89135300639833 /* ApiXml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiXml.h; sourceTree = "<group>"; };
+		4293CD261C89135300639833 /* ApiXml.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ApiXml.mm; sourceTree = "<group>"; };
+		4293CD281C89136000639833 /* WXUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXUtil.h; sourceTree = "<group>"; };
+		4293CD291C89136000639833 /* WXUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WXUtil.mm; sourceTree = "<group>"; };
+		4293CD2B1C89136C00639833 /* WechatPayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatPayManager.h; sourceTree = "<group>"; };
+		4293CD2C1C89136C00639833 /* WechatPayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WechatPayManager.m; sourceTree = "<group>"; };
+		4293CD2E1C8952CF00639833 /* QKPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKPrice.h; sourceTree = "<group>"; };
+		4293CD2F1C8952CF00639833 /* QKPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKPrice.m; sourceTree = "<group>"; };
 		4296AF961C86D741009B9EDF /* QKVersionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKVersionInfo.h; sourceTree = "<group>"; };
 		4296AF971C86D741009B9EDF /* QKVersionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKVersionInfo.m; sourceTree = "<group>"; };
 		4296AF991C86E191009B9EDF /* QKVersionInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKVersionInfoTool.h; sourceTree = "<group>"; };
@@ -675,6 +690,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42159E151C8814930071490B /* Recharge(充值) */ = {
+			isa = PBXGroup;
+			children = (
+				4293CD241C8912B900639833 /* Tool */,
+				42159E161C8814930071490B /* Controller */,
+			);
+			path = "Recharge(充值)";
+			sourceTree = "<group>";
+		};
+		42159E161C8814930071490B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42159E171C8814B00071490B /* QKRechargeViewController.h */,
+				42159E181C8814B00071490B /* QKRechargeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4293CD241C8912B900639833 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				4293CD2B1C89136C00639833 /* WechatPayManager.h */,
+				4293CD2C1C89136C00639833 /* WechatPayManager.m */,
+				4293CD281C89136000639833 /* WXUtil.h */,
+				4293CD291C89136000639833 /* WXUtil.mm */,
+				4293CD251C89135300639833 /* ApiXml.h */,
+				4293CD261C89135300639833 /* ApiXml.mm */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		7B240B691B412C93000EF832 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -836,6 +882,7 @@
 				D9E972821B9BEE82001742CC /* MyMessage(我的消息) */,
 				D9FD7C5A1B69B1EE00A517F9 /* Setting(设置界面) */,
 				D9FD7C3F1B69B1A800A517F9 /* Modify(修改个人信息) */,
+				42159E151C8814930071490B /* Recharge(充值) */,
 				D907C3C11C0BD981000BA8E6 /* TimeLimitExchange(限时兑换) */,
 				D9E048C01C0D766100CA651A /* HappyVideo(开心动画) */,
 			);
@@ -996,6 +1043,8 @@
 				4296AF971C86D741009B9EDF /* QKVersionInfo.m */,
 				4296AF991C86E191009B9EDF /* QKVersionInfoTool.h */,
 				4296AF9A1C86E191009B9EDF /* QKVersionInfoTool.m */,
+				4293CD2E1C8952CF00639833 /* QKPrice.h */,
+				4293CD2F1C8952CF00639833 /* QKPrice.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1917,6 +1966,7 @@
 				D93497A61B5360BB0089B67A /* HMCommonCheckItem.m in Sources */,
 				D98CA45B1BE9ED6300732958 /* QKMoreButton.m in Sources */,
 				D9C7C6581B72E90300DC93BA /* QKWebViewController.m in Sources */,
+				4293CD2A1C89136000639833 /* WXUtil.mm in Sources */,
 				D901E8F71B817A7D00857060 /* QKAnswerViewController.m in Sources */,
 				D95D785E1B4E2551007F58E8 /* SDWebImagePrefetcher.m in Sources */,
 				D90BD4531BE89DB80018B118 /* QKImageTextView.m in Sources */,
@@ -1972,6 +2022,7 @@
 				D98ED4521B86C3AA00F090BA /* FMDatabaseAdditions.m in Sources */,
 				D97C3A0C1B8AE14300F2709C /* QKShareTool.m in Sources */,
 				D90BD4401BE888210018B118 /* QKVideo.m in Sources */,
+				4293CD301C8952CF00639833 /* QKPrice.m in Sources */,
 				7BFB849C1B40E7580001FA88 /* HMCommonCenterItem.m in Sources */,
 				D988B79A1C044D2600C3E239 /* QKTestViewController.m in Sources */,
 				D981BA1B1B42888C000B0EFA /* MJArgument.m in Sources */,
@@ -1997,6 +2048,7 @@
 				D90BD4461BE888400018B118 /* QKLunbo.m in Sources */,
 				D9C034B91C19100300E4A017 /* QKGameDetailViewFrame.m in Sources */,
 				D981B9FD1B427CB0000B0EFA /* MBProgressHUD+MJ.m in Sources */,
+				4293CD271C89135300639833 /* ApiXml.mm in Sources */,
 				D94B86E81C040F06008CB9BB /* QKProfileViewFrame.m in Sources */,
 				D9E0B1D31B54EA3B00C70063 /* QKResetParam.m in Sources */,
 				D9FD7C671B69B1F400A517F9 /* QKMyTeskViewController.m in Sources */,
@@ -2005,6 +2057,7 @@
 				D981B9FF1B427CB0000B0EFA /* MBProgressHUD.m in Sources */,
 				D981BA231B42888C000B0EFA /* NSObject+MJCoding.m in Sources */,
 				D9BA956A1B5C9956009BF610 /* UIView+LJWKeyboardHandlerAddtion.m in Sources */,
+				4293CD2D1C89136C00639833 /* WechatPayManager.m in Sources */,
 				7B240B911B41400F000EF832 /* AFSecurityPolicy.m in Sources */,
 				7BFB849E1B40E7580001FA88 /* HMCommonItem.m in Sources */,
 				D9E9728B1B9C009C001742CC /* QKMessageView.m in Sources */,
@@ -2061,6 +2114,7 @@
 				D92E338C1B43B29E00A4A34B /* QKControllerTool.m in Sources */,
 				D95205521B670FFC00E65F12 /* QKQRCodeViewController.m in Sources */,
 				7B7D85E21B3FD51C007504B8 /* Foundation+Log.m in Sources */,
+				42159E191C8814B00071490B /* QKRechargeViewController.m in Sources */,
 				D9C034B01C1905D400E4A017 /* QKGameObject.m in Sources */,
 				7B240B991B4141FB000EF832 /* QKHttpTool.m in Sources */,
 				7BFB84A01B40E7580001FA88 /* HMCommonSwitchItem.m in Sources */,

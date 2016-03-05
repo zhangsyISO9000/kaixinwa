@@ -15,7 +15,7 @@
 @property(nonatomic,weak)UILabel * showBalanceLabel;
 
 @property(nonatomic,weak)UIImageView * icon;
-//@property(nonatomic,weak)UIButton * rechargeBtn;
+@property(nonatomic,weak)UIButton * rechargeBtn;
 @property(nonatomic,weak)UIButton * shoppingBtn;
 @property(nonatomic,weak)UILabel * swLabel;
 @end
@@ -53,14 +53,14 @@
         [self addSubview:swLabel];
         self.swLabel = swLabel;
         //创建去充值按钮
-//        UIButton * rechargeBtn = [[UIButton alloc]init];
-//        rechargeBtn.titleLabel.font = [UIFont systemFontOfSize:14];
-//        [rechargeBtn setTitle:@"去充值" forState:UIControlStateNormal];
-//        [rechargeBtn setBackgroundImage:[UIImage imageNamed:@"chongzhiweidianji"] forState:UIControlStateNormal];
-//        [rechargeBtn setBackgroundImage:[UIImage imageNamed:@"chongzhidianji"] forState:UIControlStateHighlighted];
-//        [rechargeBtn addTarget:self action:@selector(clickRecharge:) forControlEvents:UIControlEventTouchUpInside];
-//        [self addSubview:rechargeBtn];
-//        self.rechargeBtn = rechargeBtn;
+        UIButton * rechargeBtn = [[UIButton alloc]init];
+        rechargeBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+        [rechargeBtn setTitle:@"去充值" forState:UIControlStateNormal];
+        [rechargeBtn setBackgroundImage:[UIImage imageNamed:@"chongzhiweidianji"] forState:UIControlStateNormal];
+        [rechargeBtn setBackgroundImage:[UIImage imageNamed:@"chongzhidianji"] forState:UIControlStateHighlighted];
+        [rechargeBtn addTarget:self action:@selector(clickRecharge:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:rechargeBtn];
+        self.rechargeBtn = rechargeBtn;
         
         //创建去商城按钮
         UIButton * shoppingBtn = [[UIButton alloc]init];
@@ -145,12 +145,13 @@
     self.shoppingBtn.height = self.shoppingBtn.width/2.5;
     self.shoppingBtn.x = QKScreenWidth - QKCellMargin - self.shoppingBtn.width;
     self.shoppingBtn.y = (self.height - self.shoppingBtn.height)/2;
-    
-//    self.rechargeBtn.width = self.shoppingBtn.width;
-//    self.rechargeBtn.height = self.shoppingBtn.height;
-//    self.rechargeBtn.x = self.shoppingBtn.x -QKCellMargin - self.rechargeBtn.width;
-//    self.rechargeBtn.y = (self.height - self.rechargeBtn.height)/2;
-    
+    //充值按钮
+    if(![kVersion containsString:@"r"]){
+        self.rechargeBtn.width = self.shoppingBtn.width;
+        self.rechargeBtn.height = self.shoppingBtn.height;
+        self.rechargeBtn.x = self.shoppingBtn.x -QKCellMargin - self.rechargeBtn.width;
+        self.rechargeBtn.y = (self.height - self.rechargeBtn.height)/2;
+    }
 }
 -(void)dealloc
 {

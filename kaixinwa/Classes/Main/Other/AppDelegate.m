@@ -23,8 +23,10 @@
 #import "UMessage.h"
 #import "QKTestPushViewController.h"
 #import "QKVersionInfoTool.h"
+#import "QKPrice.h"
+#import "WXApi.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<WXApiDelegate>
 @property(nonatomic,strong)NSDictionary * userInfo;
 @end
 
@@ -74,14 +76,17 @@
     // 开始监控
     [mgr startMonitoring];
     
-    [UMSocialData setAppKey:@"55b58b3367e58ea9200010f9"];
-    //集成微信
-    [UMSocialWechatHandler setWXAppId:@"wxe3c788b2f83a1b51" appSecret:@"63cbfa0bc45f0864fcb46ce5a54d6ce0" url:@"http://android.myapp.com/myapp/detail.htm?apkName=com.qkhl.kaixinwa_android"];
-    //集成qq
-    [UMSocialQQHandler setQQWithAppId:@"1104787690" appKey:@"HCOFtkTKgMUz7uPo" url:@"http://android.myapp.com/myapp/detail.htm?apkName=com.qkhl.kaixinwa_android"];
+//    [UMSocialData setAppKey:@"55b58b3367e58ea9200010f9"];
+//    //集成微信
+//    [UMSocialWechatHandler setWXAppId:@"wxe3c788b2f83a1b51" appSecret:@"63cbfa0bc45f0864fcb46ce5a54d6ce0" url:@"http://android.myapp.com/myapp/detail.htm?apkName=com.qkhl.kaixinwa_android"];
+//    //集成qq
+//    [UMSocialQQHandler setQQWithAppId:@"1104787690" appKey:@"HCOFtkTKgMUz7uPo" url:@"http://android.myapp.com/myapp/detail.htm?apkName=com.qkhl.kaixinwa_android"];
     
-    //未安装隐藏
-    [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ, UMShareToQzone, UMShareToWechatSession, UMShareToWechatTimeline]];
+//    //未安装隐藏
+//    [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ, UMShareToQzone, UMShareToWechatSession, UMShareToWechatTimeline]];
+    //集成微信
+    [WXApi registerApp:@"wxe3c788b2f83a1b51"];
+    
     //推送消息
     [UMessage startWithAppkey:@"55b58b3367e58ea9200010f9" launchOptions:launchOptions];
     [self pushVersionMoreThanEight];
@@ -102,7 +107,6 @@
     NSDictionary * params = @{@"device_type":@"ios1",@"app_version":currentVersion};
     [QKHttpTool get:@"http://101.200.173.111/kaixinwa2.0/index.php/kxwapi/index/version" params:params success:^(id responseObj) {
         QKVersionInfo * version = [QKVersionInfo objectWithKeyValues:responseObj];
-//        DCLog(@"code-%@,data-%@,msg-%@",version.code,version.data,version.message);
         [QKVersionInfoTool save:version];
     } failure:^(NSError *error) {
         DCLog(@"---%@",error);
@@ -110,17 +114,43 @@
 }
 //QQ41D9B8EA
 //tencent1104787690
-//设置回调
+//设置回调(微信)
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    return  [UMSocialSnsService handleOpenURL:url];
+    return  [WXApi handleOpenURL:url delegate:self];
 }
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation
 {
-    return  [UMSocialSnsService handleOpenURL:url];
+    return  [WXApi handleOpenURL:url delegate:self];
+}
+
+#pragma mark 微信代理
+-(void)onResp:(BaseResp *)resp
+{
+    //启动微信支付的response
+    if([resp isKindOfClass:[PayResp class]]){
+        //支付返回结果，实际支付结果需要去微信服务器端查询
+        switch (resp.errCode) {
+            case 0:
+                NSLog(@"支付结果：成功！");
+                [[NSNotificationCenter defaultCenter] postNotificationName:NotifacationSuccessForRecharge object:nil userInfo:@{@"price":[QKPrice sharePrice].price}];
+                break;
+            case -1:
+                DCLog(@"支付结果：失败！");
+                
+                break;
+            case -2:
+                DCLog(@"用户已经退出支付！");
+                
+                break;
+            default:
+                
+                break;
+        }
+    }
 }
 
 //为webview播放视频准备的
@@ -135,9 +165,6 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-//    NSLog(@"%@",[[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""]
-//                  stringByReplacingOccurrencesOfString: @">" withString: @""]
-//                 stringByReplacingOccurrencesOfString: @" " withString: @""]);
     [UMessage registerDeviceToken:deviceToken];
 }
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
