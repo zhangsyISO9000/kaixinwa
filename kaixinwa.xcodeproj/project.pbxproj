@@ -10,6 +10,8 @@
 		3D0B28881B80B70200FC1367 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0B28871B80B70200FC1367 /* KxMenu.m */; };
 		42159E191C8814B00071490B /* QKRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42159E181C8814B00071490B /* QKRechargeViewController.m */; };
 		42459FD01C8530B400A8CB45 /* QKTitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42459FCF1C8530B400A8CB45 /* QKTitleScrollView.m */; };
+		426CECDF1C8D52A30086DF9F /* KIZImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 426CECDC1C8D52A30086DF9F /* KIZImageScrollView.m */; };
+		426CECE01C8D52A30086DF9F /* KIZTimerWeakTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 426CECDE1C8D52A30086DF9F /* KIZTimerWeakTarget.m */; };
 		4293CD271C89135300639833 /* ApiXml.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4293CD261C89135300639833 /* ApiXml.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4293CD2A1C89136000639833 /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4293CD291C89136000639833 /* WXUtil.mm */; };
 		4293CD2D1C89136C00639833 /* WechatPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4293CD2C1C89136C00639833 /* WechatPayManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -71,7 +73,6 @@
 		D90BD4431BE888350018B118 /* QKGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = D90BD4421BE888350018B118 /* QKGoods.m */; };
 		D90BD4461BE888400018B118 /* QKLunbo.m in Sources */ = {isa = PBXBuildFile; fileRef = D90BD4451BE888400018B118 /* QKLunbo.m */; };
 		D90BD4491BE88F180018B118 /* QKFirstHome.m in Sources */ = {isa = PBXBuildFile; fileRef = D90BD4481BE88F180018B118 /* QKFirstHome.m */; };
-		D90BD44D1BE892A10018B118 /* ImagePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D90BD44C1BE892A10018B118 /* ImagePlayerView.m */; };
 		D90BD4501BE898770018B118 /* QKGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = D90BD44F1BE898770018B118 /* QKGridView.m */; };
 		D90BD4531BE89DB80018B118 /* QKImageTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D90BD4521BE89DB80018B118 /* QKImageTextView.m */; };
 		D90BD4561BE8A20A0018B118 /* QKBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = D90BD4551BE8A20A0018B118 /* QKBottomView.m */; };
@@ -243,6 +244,10 @@
 		42159E181C8814B00071490B /* QKRechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKRechargeViewController.m; sourceTree = "<group>"; };
 		42459FCE1C8530B400A8CB45 /* QKTitleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKTitleScrollView.h; sourceTree = "<group>"; };
 		42459FCF1C8530B400A8CB45 /* QKTitleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKTitleScrollView.m; sourceTree = "<group>"; };
+		426CECDB1C8D52A30086DF9F /* KIZImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIZImageScrollView.h; sourceTree = "<group>"; };
+		426CECDC1C8D52A30086DF9F /* KIZImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIZImageScrollView.m; sourceTree = "<group>"; };
+		426CECDD1C8D52A30086DF9F /* KIZTimerWeakTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIZTimerWeakTarget.h; sourceTree = "<group>"; };
+		426CECDE1C8D52A30086DF9F /* KIZTimerWeakTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIZTimerWeakTarget.m; sourceTree = "<group>"; };
 		4293CD251C89135300639833 /* ApiXml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiXml.h; sourceTree = "<group>"; };
 		4293CD261C89135300639833 /* ApiXml.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ApiXml.mm; sourceTree = "<group>"; };
 		4293CD281C89136000639833 /* WXUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXUtil.h; sourceTree = "<group>"; };
@@ -357,8 +362,6 @@
 		D90BD4451BE888400018B118 /* QKLunbo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKLunbo.m; sourceTree = "<group>"; };
 		D90BD4471BE88F180018B118 /* QKFirstHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKFirstHome.h; sourceTree = "<group>"; };
 		D90BD4481BE88F180018B118 /* QKFirstHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKFirstHome.m; sourceTree = "<group>"; };
-		D90BD44B1BE892A10018B118 /* ImagePlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePlayerView.h; sourceTree = "<group>"; };
-		D90BD44C1BE892A10018B118 /* ImagePlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePlayerView.m; sourceTree = "<group>"; };
 		D90BD44E1BE898770018B118 /* QKGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKGridView.h; sourceTree = "<group>"; };
 		D90BD44F1BE898770018B118 /* QKGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKGridView.m; sourceTree = "<group>"; };
 		D90BD4511BE89DB80018B118 /* QKImageTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKImageTextView.h; sourceTree = "<group>"; };
@@ -708,6 +711,17 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		426CECDA1C8D52A30086DF9F /* KIZImagePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				426CECDB1C8D52A30086DF9F /* KIZImageScrollView.h */,
+				426CECDC1C8D52A30086DF9F /* KIZImageScrollView.m */,
+				426CECDD1C8D52A30086DF9F /* KIZTimerWeakTarget.h */,
+				426CECDE1C8D52A30086DF9F /* KIZTimerWeakTarget.m */,
+			);
+			path = KIZImagePlayer;
+			sourceTree = "<group>";
+		};
 		4293CD241C8912B900639833 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -969,10 +983,9 @@
 		7B7D85BD1B3FCED1007504B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				426CECDA1C8D52A30086DF9F /* KIZImagePlayer */,
 				42459FCE1C8530B400A8CB45 /* QKTitleScrollView.h */,
 				42459FCF1C8530B400A8CB45 /* QKTitleScrollView.m */,
-				D90BD44B1BE892A10018B118 /* ImagePlayerView.h */,
-				D90BD44C1BE892A10018B118 /* ImagePlayerView.m */,
 				D9A226371B9D8560001EE8D9 /* QKQRScanView.h */,
 				D9A226381B9D8560001EE8D9 /* QKQRScanView.m */,
 				D98CA4471BE98F9600732958 /* GoodsAndGamesView */,
@@ -1958,7 +1971,6 @@
 				D9A3587F1C0E9A8A00A4042D /* QKUploadIconTool.m in Sources */,
 				3D0B28881B80B70200FC1367 /* KxMenu.m in Sources */,
 				D95D785D1B4E2551007F58E8 /* SDWebImageManager.m in Sources */,
-				D90BD44D1BE892A10018B118 /* ImagePlayerView.m in Sources */,
 				D90BD4491BE88F180018B118 /* QKFirstHome.m in Sources */,
 				D98CA4521BE9CC4100732958 /* QKAnimationView.m in Sources */,
 				7B7D85E41B3FD51C007504B8 /* UIView+Extension.m in Sources */,
@@ -1972,6 +1984,7 @@
 				D90BD4531BE89DB80018B118 /* QKImageTextView.m in Sources */,
 				D9BA95681B5C9956009BF610 /* LJWKeyboardToolBar.m in Sources */,
 				7B7D85D01B3FCF4C007504B8 /* QKTabBarController.m in Sources */,
+				426CECE01C8D52A30086DF9F /* KIZTimerWeakTarget.m in Sources */,
 				D907C3C51C0BD9B5000BA8E6 /* QKTimeLimitDetailViewController.m in Sources */,
 				D9945BA01B844FD900C954A4 /* QKBaseResult.m in Sources */,
 				D9855C741B55E9B9008DD932 /* QKCheckString.m in Sources */,
@@ -2108,6 +2121,7 @@
 				7BFB84AF1B40EA530001FA88 /* UIImage+Extension.m in Sources */,
 				D95D78641B4E2551007F58E8 /* UIImageView+WebCache.m in Sources */,
 				D98ED4551B86C3AA00F090BA /* FMResultSet.m in Sources */,
+				426CECDF1C8D52A30086DF9F /* KIZImageScrollView.m in Sources */,
 				D98ED4621B86CEA800F090BA /* QKShareCell.m in Sources */,
 				7B7D85E31B3FD51C007504B8 /* NSDate+MJ.m in Sources */,
 				D981BA221B42888C000B0EFA /* MJTypeEncoding.m in Sources */,

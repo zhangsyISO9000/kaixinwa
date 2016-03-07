@@ -14,7 +14,6 @@
 #import "QKQRCodeViewController.h"
 #import "QKHttpTool.h"
 #import "MJExtension.h"
-#import "ImagePlayerView.h"
 #import "QKFirstHome.h"
 #import "QKLunbo.h"
 #import "UIImageView+WebCache.h"
@@ -32,11 +31,12 @@
 #import "QKHappyVideoController.h"
 #import "QKHomeRequestTool.h"
 #import "QKGameListViewController.h"
+#import "KIZImageScrollView.h"
 
-@interface QKHomeViewController ()<ImagePlayerViewDelegate>
+@interface QKHomeViewController ()<KIZImageScrollViewDatasource,KIZImageScrollViewDelegate>
 @property(nonatomic,strong)NSMutableArray * lunbos;
 @property(nonatomic,weak)UIScrollView * scrollView;
-@property(nonatomic,weak)ImagePlayerView * imagePlayerView;
+@property(nonatomic,weak)KIZImageScrollView * imagePlayerView;
 @property(nonatomic,weak)QKGridView * exchangeView;
 @property(nonatomic,weak)QKRadioView * radioView;
 @property(nonatomic,weak)QKGridView * gameView;
@@ -230,18 +230,27 @@
     [self.view addSubview:scrollView];
     self.scrollView = scrollView;
     //轮播视图
-    ImagePlayerView * imagePlayerView = [[ImagePlayerView alloc]init];
-    
-//    imagePlayerView.backgroundColor = [UIColor cyanColor];
+//    ImagePlayerView * imagePlayerView = [[ImagePlayerView alloc]init];
+    KIZImageScrollView * imagePlayerView = [[KIZImageScrollView alloc]init];
     imagePlayerView.frame = CGRectMake(0, 0, self.view.width, 160);
-    imagePlayerView.imagePlayerViewDelegate = self;
-    imagePlayerView.scrollInterval = 5.0;
-    imagePlayerView.pageControlPosition = ICPageControlPosition_BottomRight;
-    imagePlayerView.pageControl.pageIndicatorTintColor = [UIColor whiteColor];
-    imagePlayerView.pageControl.currentPageIndicatorTintColor = [UIColor greenColor];
+    imagePlayerView.kizScrollDataSource = self;
+    imagePlayerView.kizScrollDelegate = self;
+//    imagePlayerView.pageControlPosition = ICPageControlPosition_BottomRight;
+//    imagePlayerView.pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+//    imagePlayerView.pageControl.currentPageIndicatorTintColor = [UIColor greenColor];
     self.imagePlayerView = imagePlayerView;
     [scrollView addSubview:imagePlayerView];
     
+    UIPageControl * pageControl = [[UIPageControl alloc]init];
+    pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor greenColor];
+    CGFloat pcW = 100;
+    CGFloat pcH = 30;
+    CGFloat pcX = (self.view.width - pcW)/2 ;
+    CGFloat pcY = 160 - pcH;
+    pageControl.frame = CGRectMake(pcX, pcY, pcW, pcH);
+    self.imagePlayerView.pageControl = pageControl;
+    [self.scrollView addSubview:pageControl];
     //限时兑换
     QKGridView * exchangeView = [[QKGridView alloc]init];
     exchangeView.title = @"限时兑换";
@@ -318,24 +327,25 @@
 
 }
 
-//设置轮播视图代理
-#pragma mark - ImagePlayerViewDelegate
-- (NSInteger)numberOfItems
+//设置无线滚动轮播视图代理
+#pragma mark - KIZImageScrollViewDataSource
+- (NSUInteger)numberOfImageInScrollView:(KIZImageScrollView *)scrollView
 {
     return self.lunbos.count;
 }
 
-- (void)imagePlayerView:(ImagePlayerView *)imagePlayerView loadImageForImageView:(UIImageView *)imageView index:(NSInteger)index
+- (void)scrollView:(KIZImageScrollView *)scrollView imageAtIndex:(NSUInteger)index forImageView:(UIImageView *)imageView
 {
     QKLunbo* lunbo = self.lunbos[index];
     [imageView sd_setImageWithURL:[NSURL URLWithString:lunbo.lunbo_faceurl] placeholderImage:[UIImage imageNamed:@"placeholder"]];
 }
 
-- (void)imagePlayerView:(ImagePlayerView *)imagePlayerView didTapAtIndex:(NSInteger)index
+#pragma mark - KIZImageScrollViewDelegate
+- (void)scrollView:(KIZImageScrollView *)scrollView didTappedImageAtIndex:(NSUInteger)index
 {
     QKLunbo * lunbo = self.lunbos[index];
     QKAccount * account = [QKAccountTool readAccount];
-//    DCLog(@"did tap index = %@", lunbo.view_type);
+    //    DCLog(@"did tap index = %@", lunbo.view_type);
     if ([lunbo.view_type isEqualToString:@"2"]) {
         QKGameListViewController * glVc = [[QKGameListViewController alloc]init];
         [self.navigationController pushViewController:glVc animated:YES];
@@ -351,6 +361,41 @@
         [self.navigationController pushViewController:hv animated:YES];
     }
 }
+
+//设置轮播视图代理
+//#pragma mark - ImagePlayerViewDelegate
+//- (NSInteger)numberOfItems
+//{
+//    return self.lunbos.count;
+//}
+//
+//- (void)imagePlayerView:(ImagePlayerView *)imagePlayerView loadImageForImageView:(UIImageView *)imageView index:(NSInteger)index
+//{
+//    QKLunbo* lunbo = self.lunbos[index];
+//    [imageView sd_setImageWithURL:[NSURL URLWithString:lunbo.lunbo_faceurl] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+//}
+//
+//- (void)imagePlayerView:(ImagePlayerView *)imagePlayerView didTapAtIndex:(NSInteger)index
+//{
+//    QKLunbo * lunbo = self.lunbos[index];
+//    QKAccount * account = [QKAccountTool readAccount];
+//    //    DCLog(@"did tap index = %@", lunbo.view_type);
+//    if ([lunbo.view_type isEqualToString:@"2"]) {
+//        QKGameListViewController * glVc = [[QKGameListViewController alloc]init];
+//        [self.navigationController pushViewController:glVc animated:YES];
+//    }else if([lunbo.view_type isEqualToString:@"1"]){
+//        QKTimeLimitDetailViewController * timeLimit = [[QKTimeLimitDetailViewController alloc]init];
+//        NSString * urlStr = [NSString stringWithFormat:@"%@/uid/%@/token/%@",lunbo.lunbo_des_url,account.uid,account.token];
+//        timeLimit.urlStr = urlStr;
+//        [self.navigationController pushViewController:timeLimit animated:YES];
+//    }else{
+//        NSString *urlStr = [NSString stringWithFormat:@"%@/uid/%@/token/%@",lunbo.lunbo_des_url,account.uid,account.token];
+//        QKHappyVideoController * hv = [[QKHappyVideoController alloc]init];
+//        hv.urlStr = urlStr;
+//        [self.navigationController pushViewController:hv animated:YES];
+//    }
+//}
+
 
 -(void)dealloc
 {

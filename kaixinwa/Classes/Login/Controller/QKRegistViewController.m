@@ -138,7 +138,7 @@
         countDownButton.enabled = YES;
         return @"重新获取";
     }];
-    DCLog(@"%@",self.phoneNum.text);
+    DCLog(@"%@,接口地址%@",self.phoneNum.text,SendSMSInterfaceNew);
     NSDictionary * params = @{@"post_code":MiYao, @"telephone":self.phoneNum.text};
 
     

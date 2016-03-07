@@ -53,7 +53,10 @@
 #pragma mark interface
 //登录接口
 #define xLogin @"Kxwapi/User/login"
-#define LoginInterface [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,xLogin]
+#define xLoginNew @"kxwaapi.php/user/login"
+//http://101.200.173.111/kaixinwa2.0/kxwaapi.php/Index/login
+
+#define LoginInterface [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,xLoginNew]
 
 //注册接口
 //#define RegisteInterface @"http://101.200.173.163/qkhl_api/index.php/kxwapi/User/regist"
@@ -62,12 +65,17 @@
 
 //短信验证码
 //#define SendSMSInterface @"http://101.200.173.163/qkhl_api/index.php/kxwapi/Sms/sendSMS"
-#define xSendSMS @"kxwaapi.php/User/modpwd"
-#define SendSMSInterfaceNew [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,xSendSMS]
+//#define xSendSMS @"kxwaapi.php/User/modpwd"
+#define xSendSMSNew @"kxwaapi.php/Sms/sendSMS"
+#define SendSMSInterfaceNew [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,xSendSMSNew]
 
 //开心蛙修改密码验证接口
 #define xCodeVerity @"kxwaapi.php/User/checkUser"
 #define codeVerityInterface [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,xCodeVerity]
+//修改密码
+#define xModPwd @"kxwaapi.php/User/modpwd"
+#define ModPwdInterface [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,xModPwd]
+
 //getHome接口
 #define xGethome @"index.php/Kxwapi/Index/getHome"
 #define GetHomeInterface [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,xGethome]

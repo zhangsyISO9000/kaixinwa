@@ -22,7 +22,6 @@
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     NSString * str = request.URL.absoluteString;
-    DCLog(@"%@",str);
     if ([str hasPrefix:@"ios://ios//"]) {
         NSArray * array= [str componentsSeparatedByString:@"//ios//"];
         NSString * ocMethod = array.lastObject;
