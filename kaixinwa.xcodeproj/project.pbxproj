@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3D0B28881B80B70200FC1367 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0B28871B80B70200FC1367 /* KxMenu.m */; };
 		42159E191C8814B00071490B /* QKRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42159E181C8814B00071490B /* QKRechargeViewController.m */; };
+		423BAA111C926F7100AFA84C /* QKMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 423BAA101C926F7100AFA84C /* QKMessageViewController.m */; };
+		423BAA151C926F8300AFA84C /* QKMessageContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 423BAA141C926F8300AFA84C /* QKMessageContent.m */; };
+		423BAA181C92A90700AFA84C /* QKScanWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 423BAA171C92A90700AFA84C /* QKScanWebViewController.m */; };
 		42459FD01C8530B400A8CB45 /* QKTitleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42459FCF1C8530B400A8CB45 /* QKTitleScrollView.m */; };
 		426CECDF1C8D52A30086DF9F /* KIZImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 426CECDC1C8D52A30086DF9F /* KIZImageScrollView.m */; };
 		426CECE01C8D52A30086DF9F /* KIZTimerWeakTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 426CECDE1C8D52A30086DF9F /* KIZTimerWeakTarget.m */; };
@@ -112,7 +115,6 @@
 		D95153FC1C06DE81009F9428 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95153FB1C06DE81009F9428 /* StoreKit.framework */; };
 		D95154001C06E99B009F9428 /* products.plist in Resources */ = {isa = PBXBuildFile; fileRef = D95153FF1C06E99B009F9428 /* products.plist */; };
 		D95205521B670FFC00E65F12 /* QKQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D95205511B670FFC00E65F12 /* QKQRCodeViewController.m */; };
-		D95205551B675A6400E65F12 /* QKMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D95205541B675A6400E65F12 /* QKMessageViewController.m */; };
 		D9573A071B54994D006ABB27 /* NewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9573A061B54994D006ABB27 /* NewfeatureViewController.m */; };
 		D95B85FC1B61FEAB0019479F /* HMCommonAvatarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D95B85FB1B61FEAB0019479F /* HMCommonAvatarItem.m */; };
 		D95D78561B4E2551007F58E8 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D95D78361B4E2551007F58E8 /* MKAnnotationView+WebCache.m */; };
@@ -209,7 +211,6 @@
 		D9E15ABD1B4B7985003B25FA /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E15ABB1B4B7985003B25FA /* line@2x.png */; };
 		D9E15ABE1B4B7985003B25FA /* pick_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E15ABC1B4B7985003B25FA /* pick_bg@2x.png */; };
 		D9E2F6981B4E6A23008138C3 /* CCLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E2F6971B4E6A23008138C3 /* CCLocationManager.m */; };
-		D9E9727E1B9BE784001742CC /* QKMessageContent.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E9727D1B9BE784001742CC /* QKMessageContent.m */; };
 		D9E972881B9BEEBE001742CC /* QKMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E972871B9BEEBE001742CC /* QKMessageCell.m */; };
 		D9E9728B1B9C009C001742CC /* QKMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E9728A1B9C009C001742CC /* QKMessageView.m */; };
 		D9EA3CC51B4F55360017BECF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EA3CC41B4F55360017BECF /* MapKit.framework */; };
@@ -242,6 +243,12 @@
 		3D0B28871B80B70200FC1367 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		42159E171C8814B00071490B /* QKRechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKRechargeViewController.h; sourceTree = "<group>"; };
 		42159E181C8814B00071490B /* QKRechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKRechargeViewController.m; sourceTree = "<group>"; };
+		423BAA0F1C926F7100AFA84C /* QKMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKMessageViewController.h; sourceTree = "<group>"; };
+		423BAA101C926F7100AFA84C /* QKMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKMessageViewController.m; sourceTree = "<group>"; };
+		423BAA131C926F8300AFA84C /* QKMessageContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKMessageContent.h; sourceTree = "<group>"; };
+		423BAA141C926F8300AFA84C /* QKMessageContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKMessageContent.m; sourceTree = "<group>"; };
+		423BAA161C92A90700AFA84C /* QKScanWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKScanWebViewController.h; sourceTree = "<group>"; };
+		423BAA171C92A90700AFA84C /* QKScanWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKScanWebViewController.m; sourceTree = "<group>"; };
 		42459FCE1C8530B400A8CB45 /* QKTitleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKTitleScrollView.h; sourceTree = "<group>"; };
 		42459FCF1C8530B400A8CB45 /* QKTitleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKTitleScrollView.m; sourceTree = "<group>"; };
 		426CECDB1C8D52A30086DF9F /* KIZImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIZImageScrollView.h; sourceTree = "<group>"; };
@@ -432,8 +439,6 @@
 		D95153FF1C06E99B009F9428 /* products.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = products.plist; sourceTree = "<group>"; };
 		D95205501B670FFC00E65F12 /* QKQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKQRCodeViewController.h; sourceTree = "<group>"; };
 		D95205511B670FFC00E65F12 /* QKQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKQRCodeViewController.m; sourceTree = "<group>"; };
-		D95205531B675A6400E65F12 /* QKMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QKMessageViewController.h; path = ../../Profile/Controller/QKMessageViewController.h; sourceTree = "<group>"; };
-		D95205541B675A6400E65F12 /* QKMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QKMessageViewController.m; path = ../../Profile/Controller/QKMessageViewController.m; sourceTree = "<group>"; };
 		D9573A051B54994D006ABB27 /* NewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewfeatureViewController.h; sourceTree = "<group>"; };
 		D9573A061B54994D006ABB27 /* NewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewfeatureViewController.m; sourceTree = "<group>"; };
 		D95B85FA1B61FEAB0019479F /* HMCommonAvatarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCommonAvatarItem.h; sourceTree = "<group>"; };
@@ -620,8 +625,6 @@
 		D9E15ABC1B4B7985003B25FA /* pick_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pick_bg@2x.png"; sourceTree = "<group>"; };
 		D9E2F6961B4E6A23008138C3 /* CCLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationManager.h; sourceTree = "<group>"; };
 		D9E2F6971B4E6A23008138C3 /* CCLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocationManager.m; sourceTree = "<group>"; };
-		D9E9727C1B9BE784001742CC /* QKMessageContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QKMessageContent.h; path = ../../Profile/Model/QKMessageContent.h; sourceTree = "<group>"; };
-		D9E9727D1B9BE784001742CC /* QKMessageContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QKMessageContent.m; path = ../../Profile/Model/QKMessageContent.m; sourceTree = "<group>"; };
 		D9E972861B9BEEBE001742CC /* QKMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKMessageCell.h; sourceTree = "<group>"; };
 		D9E972871B9BEEBE001742CC /* QKMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKMessageCell.m; sourceTree = "<group>"; };
 		D9E972891B9C009C001742CC /* QKMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKMessageView.h; sourceTree = "<group>"; };
@@ -709,6 +712,25 @@
 				42159E181C8814B00071490B /* QKRechargeViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		423BAA0E1C926F7100AFA84C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				423BAA0F1C926F7100AFA84C /* QKMessageViewController.h */,
+				423BAA101C926F7100AFA84C /* QKMessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		423BAA121C926F8300AFA84C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				423BAA131C926F8300AFA84C /* QKMessageContent.h */,
+				423BAA141C926F8300AFA84C /* QKMessageContent.m */,
+			);
+			name = Model;
+			path = Controller/Model;
 			sourceTree = "<group>";
 		};
 		426CECDA1C8D52A30086DF9F /* KIZImagePlayer */ = {
@@ -955,6 +977,8 @@
 				D95205511B670FFC00E65F12 /* QKQRCodeViewController.m */,
 				D901E8F51B817A7D00857060 /* QKAnswerViewController.h */,
 				D901E8F61B817A7D00857060 /* QKAnswerViewController.m */,
+				423BAA161C92A90700AFA84C /* QKScanWebViewController.h */,
+				423BAA171C92A90700AFA84C /* QKScanWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1677,29 +1701,11 @@
 		D9E972821B9BEE82001742CC /* MyMessage(我的消息) */ = {
 			isa = PBXGroup;
 			children = (
-				D9E972831B9BEE82001742CC /* Controller */,
-				D9E972841B9BEE82001742CC /* Model */,
+				423BAA121C926F8300AFA84C /* Model */,
+				423BAA0E1C926F7100AFA84C /* Controller */,
 				D9E972851B9BEE82001742CC /* View */,
 			);
 			path = "MyMessage(我的消息)";
-			sourceTree = "<group>";
-		};
-		D9E972831B9BEE82001742CC /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				D95205531B675A6400E65F12 /* QKMessageViewController.h */,
-				D95205541B675A6400E65F12 /* QKMessageViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		D9E972841B9BEE82001742CC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				D9E9727C1B9BE784001742CC /* QKMessageContent.h */,
-				D9E9727D1B9BE784001742CC /* QKMessageContent.m */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		D9E972851B9BEE82001742CC /* View */ = {
@@ -2005,26 +2011,27 @@
 				D98ED45F1B86CBB800F090BA /* QKMyShareObj.m in Sources */,
 				7B240B941B41400F000EF832 /* AFURLResponseSerialization.m in Sources */,
 				D98CA44E1BE9952100732958 /* QKRadioDetailView.m in Sources */,
-				D9E9727E1B9BE784001742CC /* QKMessageContent.m in Sources */,
 				D95D78591B4E2551007F58E8 /* SDWebImageCompat.m in Sources */,
 				7B7D85D31B3FCFD6007504B8 /* QKHomeViewController.m in Sources */,
 				7B240B771B41362C000EF832 /* QKRegistViewController.m in Sources */,
 				D95D78651B4E2551007F58E8 /* UIView+WebCacheOperation.m in Sources */,
-				D95205551B675A6400E65F12 /* QKMessageViewController.m in Sources */,
 				D9FD7C601B69B1EE00A517F9 /* QKSettingViewController.m in Sources */,
 				D95D785A1B4E2551007F58E8 /* SDWebImageDecoder.m in Sources */,
 				7BFB84AE1B40EA530001FA88 /* UIBarButtonItem+Extension.m in Sources */,
 				D9E2F6981B4E6A23008138C3 /* CCLocationManager.m in Sources */,
+				423BAA111C926F7100AFA84C /* QKMessageViewController.m in Sources */,
 				7B7D85D91B3FD03B007504B8 /* QKProfileViewController.m in Sources */,
 				D98ED45C1B86CB9B00F090BA /* QKMyShareTableViewController.m in Sources */,
 				7B240B921B41400F000EF832 /* AFURLConnectionOperation.m in Sources */,
 				D9FD7C571B69B1A800A517F9 /* QKPickerView.m in Sources */,
 				D9573A071B54994D006ABB27 /* NewfeatureViewController.m in Sources */,
+				423BAA181C92A90700AFA84C /* QKScanWebViewController.m in Sources */,
 				4296AF9B1C86E191009B9EDF /* QKVersionInfoTool.m in Sources */,
 				7B240B8E1B41400F000EF832 /* AFHTTPRequestOperationManager.m in Sources */,
 				D981BA1E1B42888C000B0EFA /* MJIvar.m in Sources */,
 				D9C034BC1C1911A400E4A017 /* QKGameFrame.m in Sources */,
 				D981BA1F1B42888C000B0EFA /* MJMember.m in Sources */,
+				423BAA151C926F8300AFA84C /* QKMessageContent.m in Sources */,
 				7B7D85CD1B3FCED1007504B8 /* main.m in Sources */,
 				D98ED4531B86C3AA00F090BA /* FMDatabasePool.m in Sources */,
 				D95D785C1B4E2551007F58E8 /* SDWebImageDownloaderOperation.m in Sources */,

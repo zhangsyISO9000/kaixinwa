@@ -14,6 +14,7 @@
 @property(nonatomic,weak)UILabel * titleLabel;
 @property(nonatomic,weak)UILabel * detailLabel;
 @property(nonatomic,weak)UIView * line;
+@property(nonatomic,weak)UILabel * timeLabel;
 @end
 
 @implementation QKMessageView
@@ -42,6 +43,12 @@
         
         [self addSubview:titleLabel];
         self.titleLabel = titleLabel;
+        //创建时间标签
+        UILabel * timeLabel = [[UILabel alloc]init];
+        timeLabel.font = titleLabel.font;
+        timeLabel.textColor = [UIColor lightGrayColor];
+        [self addSubview:timeLabel];
+        self.timeLabel = timeLabel;
         
         UILabel * detailLabel = [[UILabel alloc]init];
         detailLabel.font = [UIFont systemFontOfSize:12];
@@ -71,6 +78,12 @@
     self.titleLabel.size = titleLabelSize;
     self.titleLabel.centerY = self.typeBtn.centerY;
     
+    CGSize timeLabelSize = [self.timeLabel.text sizeWithAttributes:@{NSFontAttributeName : self.timeLabel.font}];
+    self.timeLabel.size = timeLabelSize;
+    self.timeLabel.x = CGRectGetMaxX(self.titleLabel.frame) + QKCellMargin;
+    self.timeLabel.y = self.titleLabel.y;
+    
+    
     self.line.x = QKCellMargin;
     self.line.y = self.typeBtn.height + QKCellMargin * 2;
     self.line.size = CGSizeMake(QKScreenWidth - QKCellMargin, 1);
@@ -86,15 +99,15 @@
     _messageContent = messageContent;
     
     self.titleLabel.text = messageContent.title;
-    if([messageContent.title containsString:@"任务"]){
+    if([messageContent.title containsString:@"签到"]){
         [self.typeBtn setBackgroundImage:[UIImage imageNamed:@"green-frame"] forState:UIControlStateNormal];
-        [self.typeBtn setTitle:@"任务" forState:UIControlStateNormal];
+        [self.typeBtn setTitle:@"消息" forState:UIControlStateNormal];
     }else{
         [self.typeBtn setBackgroundImage:[UIImage imageNamed:@"yellow-frame"] forState:UIControlStateNormal];
         [self.typeBtn setTitle:@"消息" forState:UIControlStateNormal];
     }
     
     self.detailLabel.text = messageContent.detailText;
-    
+    self.timeLabel.text = messageContent.timeStr;
 }
 @end

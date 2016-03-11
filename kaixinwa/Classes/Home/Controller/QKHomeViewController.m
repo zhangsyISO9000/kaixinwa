@@ -184,6 +184,7 @@
     QKTimeLimitDetailViewController * web = [[QKTimeLimitDetailViewController alloc]init];
     NSString * strAll = [NSString stringWithFormat:@"%@/uid/%@/token/%@",noti.userInfo[@"url"],account.uid,account.token];
     web.urlStr = strAll;
+    DCLog(@"%@",strAll);
     [self.navigationController pushViewController:web animated:YES];
 }
 //开心电台显示更多
@@ -201,6 +202,7 @@
     QKAccount * account = [QKAccountTool readAccount];
     QKHappyVideoController * web = [[QKHappyVideoController alloc]init];
      NSString * strAll = [NSString stringWithFormat:@"%@/Index/index/uid/%@/token/%@",noti.userInfo[@"url"],account.uid,account.token];
+    DCLog(@"%@",strAll);
     web.urlStr = strAll;
     [self.navigationController pushViewController:web animated:YES];
 }
@@ -331,7 +333,8 @@
 #pragma mark - KIZImageScrollViewDataSource
 - (NSUInteger)numberOfImageInScrollView:(KIZImageScrollView *)scrollView
 {
-    return self.lunbos.count;
+    //暂时写死了为两个
+    return 2;
 }
 
 - (void)scrollView:(KIZImageScrollView *)scrollView imageAtIndex:(NSUInteger)index forImageView:(UIImageView *)imageView
@@ -361,41 +364,6 @@
         [self.navigationController pushViewController:hv animated:YES];
     }
 }
-
-//设置轮播视图代理
-//#pragma mark - ImagePlayerViewDelegate
-//- (NSInteger)numberOfItems
-//{
-//    return self.lunbos.count;
-//}
-//
-//- (void)imagePlayerView:(ImagePlayerView *)imagePlayerView loadImageForImageView:(UIImageView *)imageView index:(NSInteger)index
-//{
-//    QKLunbo* lunbo = self.lunbos[index];
-//    [imageView sd_setImageWithURL:[NSURL URLWithString:lunbo.lunbo_faceurl] placeholderImage:[UIImage imageNamed:@"placeholder"]];
-//}
-//
-//- (void)imagePlayerView:(ImagePlayerView *)imagePlayerView didTapAtIndex:(NSInteger)index
-//{
-//    QKLunbo * lunbo = self.lunbos[index];
-//    QKAccount * account = [QKAccountTool readAccount];
-//    //    DCLog(@"did tap index = %@", lunbo.view_type);
-//    if ([lunbo.view_type isEqualToString:@"2"]) {
-//        QKGameListViewController * glVc = [[QKGameListViewController alloc]init];
-//        [self.navigationController pushViewController:glVc animated:YES];
-//    }else if([lunbo.view_type isEqualToString:@"1"]){
-//        QKTimeLimitDetailViewController * timeLimit = [[QKTimeLimitDetailViewController alloc]init];
-//        NSString * urlStr = [NSString stringWithFormat:@"%@/uid/%@/token/%@",lunbo.lunbo_des_url,account.uid,account.token];
-//        timeLimit.urlStr = urlStr;
-//        [self.navigationController pushViewController:timeLimit animated:YES];
-//    }else{
-//        NSString *urlStr = [NSString stringWithFormat:@"%@/uid/%@/token/%@",lunbo.lunbo_des_url,account.uid,account.token];
-//        QKHappyVideoController * hv = [[QKHappyVideoController alloc]init];
-//        hv.urlStr = urlStr;
-//        [self.navigationController pushViewController:hv animated:YES];
-//    }
-//}
-
 
 -(void)dealloc
 {

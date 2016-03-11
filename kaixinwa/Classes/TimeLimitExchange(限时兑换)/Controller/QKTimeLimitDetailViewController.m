@@ -26,9 +26,11 @@
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     NSString * str = request.URL.absoluteString;
+    DCLog(@"----%@",str);
     if ([str hasPrefix:@"ios://ios//"]) {
         NSArray * array= [str componentsSeparatedByString:@"//ios//"];
         NSString * ocMethod = array.lastObject;
+//        DCLog(@"%@",ocMethod);
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         [self performSelector:NSSelectorFromString(ocMethod)];
@@ -37,6 +39,7 @@
     }else if([str hasPrefix:@"ios://push"]){
         NSArray * array = [str componentsSeparatedByString:@"://"];
         NSString * ocMethod = array.lastObject;
+//        DCLog(@"%@",ocMethod);
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         [self performSelector:NSSelectorFromString(ocMethod)];

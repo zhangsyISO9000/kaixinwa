@@ -30,6 +30,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.backgroundColor = QKGlobalBg;
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         QKMessageView * messageView = [[QKMessageView alloc]init];
         messageView.frame = self.bounds;
         messageView.y = QKCellMargin;

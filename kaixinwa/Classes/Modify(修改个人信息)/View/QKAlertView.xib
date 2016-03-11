@@ -32,6 +32,12 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="不得超过16个字符" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMl-Y1-lFK">
+                    <rect key="frame" x="73.5" y="0.0" width="113.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
@@ -40,7 +46,9 @@
                 <constraint firstAttribute="trailing" secondItem="r7m-CE-86U" secondAttribute="trailing" constant="8" id="Bau-Ad-ai4"/>
                 <constraint firstItem="rM4-ei-KkW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="DZ1-Eu-v7w"/>
                 <constraint firstAttribute="trailing" secondItem="f81-40-yxi" secondAttribute="trailing" id="G7K-Sk-kBc"/>
+                <constraint firstItem="jMl-Y1-lFK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HXp-to-K4G"/>
                 <constraint firstAttribute="trailing" secondItem="f81-40-yxi" secondAttribute="trailing" id="K6W-0G-h26"/>
+                <constraint firstItem="jMl-Y1-lFK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="LGa-ci-Zgv"/>
                 <constraint firstItem="f81-40-yxi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="M6l-eE-Lal"/>
                 <constraint firstItem="r7m-CE-86U" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="ORX-gZ-nJT"/>
                 <constraint firstAttribute="bottom" secondItem="f81-40-yxi" secondAttribute="bottom" id="Obb-Hx-IRF"/>
@@ -53,6 +61,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="notiLabel" destination="jMl-Y1-lFK" id="GME-aH-weN"/>
                 <outlet property="submitButton" destination="r7m-CE-86U" id="Ph0-n2-mKE"/>
                 <outlet property="textField" destination="rM4-ei-KkW" id="nNt-eM-yzC"/>
             </connections>

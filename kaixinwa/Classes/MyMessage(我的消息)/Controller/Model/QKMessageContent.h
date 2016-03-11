@@ -11,4 +11,6 @@
 @interface QKMessageContent : NSObject
 @property(nonatomic,copy)NSString * title;
 @property(nonatomic,copy)NSString * detailText;
+@property(nonatomic,copy)NSString * timeStr;
+@property(nonatomic,assign)NSInteger uid;
 @end

@@ -14,6 +14,7 @@
 #import "QKAnswerViewController.h"
 #import "AppDelegate.h"
 #import "MBProgressHUD+MJ.h"
+#import "QKScanWebViewController.h"
 
 @interface QKQRCodeViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 @property(nonatomic,strong)AVCaptureSession * session;
@@ -171,7 +172,8 @@
         }else{
             [_session stopRunning];
             AVMetadataMachineReadableCodeObject * metadataObject = [metadataObjects objectAtIndex : 0 ];
-            QKWebViewController * webVC = [[QKWebViewController alloc]init];
+            QKScanWebViewController * webVC = [[QKScanWebViewController alloc]init];
+            
             QKAnswerViewController * answerVC = [[QKAnswerViewController alloc]init];
             
             webVC.urlStr = metadataObject.stringValue;

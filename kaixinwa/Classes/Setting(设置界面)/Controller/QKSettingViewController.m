@@ -87,10 +87,16 @@
         [[SDWebImageManager sharedManager].imageCache clearDisk];
         weakClearCache.subtitle = nil;
 //        [QKDataBaseTool cleanAllTaskMessage];
-        // 刷新表格
-        [weakVc.tableView reloadData];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            // 2秒后异步执行这里的代码...
+            // 刷新表格
+            [weakVc.tableView reloadData];
+            
+            [MBProgressHUD hideHUD];
+        });
         
-        [MBProgressHUD hideHUD];
+        
     };
     group.items = @[clearItem,pushItem];
 }
@@ -99,7 +105,7 @@
 {
     HMCommonGroup * group = [HMCommonGroup group];
     [self.groups addObject:group];
-    HMCommonArrowItem * aboutAnswer = [HMCommonArrowItem itemWithTitle:@"关于开心蛙答案"];
+    HMCommonArrowItem * aboutAnswer = [HMCommonArrowItem itemWithTitle:@"关于开心蛙"];
     aboutAnswer.destVcClass = [QKAboutKaixinwaViewController class];
     
     //    HMCommonArrowItem * update = [HMCommonArrowItem itemWithTitle:@"检查更新"];
@@ -148,25 +154,23 @@
     [MBProgressHUD showMessage:@"正在退出"];
     QKAccount * account = [QKAccountTool readAccount];
     NSString * url = [NSString stringWithFormat:@"%@%@/mall.php/index/clearsession",kInterfaceStart,kVersion];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        // 2秒后异步执行这里的代码...
+        [QKAccountTool deleteAccount];
+        UIWindow * window = [UIApplication sharedApplication].keyWindow;
+        QKLoginViewController* loginVc = [[QKLoginViewController alloc]init];
+        loginVc.index = 2;
+        UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:loginVc];
+        [MBProgressHUD hideHUD];
+        window.rootViewController = nav;
+
+        
+    });
     
 //    http://101.200.173.111/kaixinwa2.0/mall.php/index/clearsession"
     [QKHttpTool post:url params:@{@"uid":account.uid} success:^(id responseObj) {
-        [QKAccountTool deleteAccount];
-        UIWindow * window = [UIApplication sharedApplication].keyWindow;
-        QKLoginViewController* loginVc = [[QKLoginViewController alloc]init];
-        loginVc.index = 2;
-        UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:loginVc];
-        [MBProgressHUD hideHUD];
-        window.rootViewController = nav;
     } failure:^(NSError *error) {
-        //失败也退出
-        [QKAccountTool deleteAccount];
-        UIWindow * window = [UIApplication sharedApplication].keyWindow;
-        QKLoginViewController* loginVc = [[QKLoginViewController alloc]init];
-        loginVc.index = 2;
-        UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:loginVc];
-        [MBProgressHUD hideHUD];
-        window.rootViewController = nav;
     }];
     
 }
@@ -268,5 +272,6 @@
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
 }
 @end

@@ -67,7 +67,7 @@
     self.myMessage.badgeValue = @"new";
     [self.tableView reloadData];
     self.tabBarItem.badgeValue = @"new";
-    [QKDataBaseTool insertInTaskTableWithTitle:@"您已完成了一项任务" andDetailText:@"恭喜你已经完成每日签到任务，并获得5个开心豆"];
+    [QKDataBaseTool insertInTaskTableWithTitle:@"您已经签到" andDetailText:@"恭喜您已经完成每日签到，并获得5个开心豆"];
 }
 -(void)rechargeFinished:(NSNotification*)noti
 {
@@ -81,7 +81,7 @@
 
 #pragma mark -下拉刷新
 -(void)setupRefresh
-{
+{    
     UIRefreshControl * refreshControl = [[UIRefreshControl alloc]init];
     self.refreshControl = refreshControl;
     [self.tableView addSubview:refreshControl];

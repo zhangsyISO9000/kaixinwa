@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QKAboutKaixinwaViewController">
             <connections>
+                <outlet property="versionLabel" destination="d47-Hn-Vbl" id="P3O-Af-jFJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@2015 Kaixinwa.com all rights reserved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atv-pI-DWh">
-                    <rect key="frame" x="172" y="575" width="256" height="17"/>
+                    <rect key="frame" x="172" y="575" width="255.5" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -30,33 +31,9 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="       开心蛙是一款服务于小学生的、全方位陪伴学生成长的学习伙伴。他在学生学习生活中提供相应的帮助和探索知识的乐趣，陪伴学生健康成长，快乐学习。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2M-ld-zY0">
-                    <rect key="frame" x="20" y="259" width="560" height="34"/>
+                    <rect key="frame" x="20" y="267" width="560" height="33.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFw-Dg-cHS">
-                    <rect key="frame" x="196" y="323" width="209" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="LtN-IU-3IG"/>
-                        <constraint firstAttribute="width" constant="209" id="xCy-Kv-0Em"/>
-                    </constraints>
-                    <attributedString key="attributedText">
-                        <fragment content="官方微博：">
-                            <attributes>
-                                <color key="NSColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="14" name="STHeitiSC-Light"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="weibo.com/kaixinwa">
-                            <attributes>
-                                <color key="NSColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="14" name=".HelveticaNeueDeskInterface-Regular"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开心蛙  版权所有" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szs-PQ-eJP">
@@ -69,38 +46,20 @@
                     <color key="textColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qi-1O-Z4t">
-                    <rect key="frame" x="196" y="352" width="209" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开心蛙" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prc-st-oyE">
+                    <rect key="frame" x="269" y="177" width="62" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="ZkK-af-otV"/>
-                        <constraint firstAttribute="width" constant="209" id="hA2-hJ-Kb7"/>
-                    </constraints>
-                    <attributedString key="attributedText">
-                        <fragment content="微信公共号：">
-                            <attributes>
-                                <color key="NSColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="14" name="STHeitiSC-Light"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="kaixinwa">
-                            <attributes>
-                                <color key="NSColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="14" name=".HelveticaNeueDeskInterface-Regular"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开心蛙版本2.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prc-st-oyE">
-                    <rect key="frame" x="269" y="177" width="62" height="62"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="62" id="wYa-BG-rYG"/>
+                        <constraint firstAttribute="height" constant="30" id="wYa-BG-rYG"/>
                         <constraint firstAttribute="width" constant="62" id="xZw-Rb-cWl"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d47-Hn-Vbl">
+                    <rect key="frame" x="279" y="209" width="42" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -109,18 +68,16 @@
                 <constraint firstItem="Atv-pI-DWh" firstAttribute="top" secondItem="Szs-PQ-eJP" secondAttribute="bottom" constant="8" id="6MW-Jh-i1g"/>
                 <constraint firstAttribute="centerX" secondItem="Szs-PQ-eJP" secondAttribute="centerX" id="ACh-F5-cRb"/>
                 <constraint firstItem="Prc-st-oyE" firstAttribute="top" secondItem="lLg-be-Mk8" secondAttribute="bottom" constant="8" id="C6Y-JQ-wxM"/>
-                <constraint firstItem="p2M-ld-zY0" firstAttribute="top" secondItem="Prc-st-oyE" secondAttribute="bottom" constant="20" id="FCB-dD-P24"/>
+                <constraint firstItem="p2M-ld-zY0" firstAttribute="top" secondItem="Prc-st-oyE" secondAttribute="bottom" constant="60" id="FCB-dD-P24"/>
+                <constraint firstItem="d47-Hn-Vbl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JaG-06-ITS"/>
+                <constraint firstItem="d47-Hn-Vbl" firstAttribute="top" secondItem="Prc-st-oyE" secondAttribute="bottom" constant="2" id="JiZ-BX-0sv"/>
                 <constraint firstItem="Atv-pI-DWh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Kba-gl-z2P"/>
-                <constraint firstAttribute="centerX" secondItem="8qi-1O-Z4t" secondAttribute="centerX" id="LOI-NW-zny"/>
-                <constraint firstAttribute="centerX" secondItem="hFw-Dg-cHS" secondAttribute="centerX" id="Ndf-nA-Oiv"/>
                 <constraint firstAttribute="centerX" secondItem="Prc-st-oyE" secondAttribute="centerX" id="P1g-eG-4aK"/>
                 <constraint firstItem="p2M-ld-zY0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="alM-GB-ydw"/>
-                <constraint firstItem="8qi-1O-Z4t" firstAttribute="top" secondItem="hFw-Dg-cHS" secondAttribute="bottom" constant="8" id="cwE-RB-hSR"/>
                 <constraint firstAttribute="centerX" secondItem="lLg-be-Mk8" secondAttribute="centerX" id="dp4-Pm-aoJ"/>
                 <constraint firstItem="lLg-be-Mk8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="75" id="koU-LL-cWR"/>
                 <constraint firstItem="Atv-pI-DWh" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="lwd-Im-487"/>
                 <constraint firstAttribute="trailing" secondItem="p2M-ld-zY0" secondAttribute="trailing" constant="20" id="qy0-a3-87R"/>
-                <constraint firstItem="hFw-Dg-cHS" firstAttribute="top" secondItem="p2M-ld-zY0" secondAttribute="bottom" constant="30" id="umd-mL-nSY"/>
                 <constraint firstAttribute="centerX" secondItem="p2M-ld-zY0" secondAttribute="centerX" id="zTo-fi-bdL"/>
             </constraints>
             <point key="canvasLocation" x="319" y="152"/>

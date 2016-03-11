@@ -38,7 +38,7 @@
         FMDatabase * db = [FMDatabase databaseWithPath:path];
         if ([db open]) {
             
-            NSString * sql2 = @"CREATE TABLE 'Task' ('id' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL , 'title' TEXT, 'detailText' TEXT)";
+            NSString * sql2 = @"CREATE TABLE 'Task' ('id' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL , 'title' TEXT, 'detailText' TEXT, 'timeStr' TEXT)";
             BOOL res = [db executeUpdate:sql2];
             if (!res) {
                 DCLog(@"error when creating db table");
@@ -56,10 +56,13 @@
 +(void)insertInTaskTableWithTitle:(NSString *)title andDetailText:(NSString *)detail {
     
     FMDatabase * db = [FMDatabase databaseWithPath:PATH_OF_Task_Sqlite];
+    NSDate * nowDate = [NSDate date];
+    double nowtime = [nowDate timeIntervalSince1970];
+    NSString *nowDateStampString = [NSString stringWithFormat:@"%f",nowtime];
     if ([db open]) {
-        NSString * sql = @"insert into task (title, detailText) values(?, ?)";
+        NSString * sql = @"insert into task (title, detailText,timeStr) values(?, ?, ?)";
         
-        BOOL res = [db executeUpdate:sql, title, detail];
+        BOOL res = [db executeUpdate:sql, title, detail,nowDateStampString];
         if (!res) {
             DCLog(@"error to insert data");
         } else {
@@ -80,9 +83,11 @@
         while ([rs next]) {
             NSString * title = [rs stringForColumn:@"title"];
             NSString * url = [rs stringForColumn:@"detailText"];
+            NSString * timeStr = [rs stringForColumn:@"timeStr"];
             QKMessageContent * messageContent = [[QKMessageContent alloc]init];
             messageContent.title = title;
             messageContent.detailText = url;
+            messageContent.timeStr = timeStr;
             [array addObject:messageContent];
         }
         [db close];

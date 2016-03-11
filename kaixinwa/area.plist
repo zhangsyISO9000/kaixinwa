@@ -5497,7 +5497,7 @@
 					<string>札达</string>
 				</array>
 				<key>city</key>
-				<string>阿里地</string>
+				<string>阿里地区</string>
 			</dict>
 			<dict>
 				<key>areas</key>
@@ -5531,7 +5531,7 @@
 					<string>乃东</string>
 				</array>
 				<key>city</key>
-				<string>山南地</string>
+				<string>山南地区</string>
 			</dict>
 			<dict>
 				<key>areas</key>
@@ -5556,7 +5556,7 @@
 					<string>康马</string>
 				</array>
 				<key>city</key>
-				<string>日喀则地</string>
+				<string>日喀则</string>
 			</dict>
 			<dict>
 				<key>areas</key>
@@ -5573,7 +5573,7 @@
 					<string>班戈</string>
 				</array>
 				<key>city</key>
-				<string>那曲地</string>
+				<string>那曲地区</string>
 			</dict>
 			<dict>
 				<key>areas</key>
@@ -5591,7 +5591,7 @@
 					<string>洛隆</string>
 				</array>
 				<key>city</key>
-				<string>昌都地</string>
+				<string>昌都地区</string>
 			</dict>
 			<dict>
 				<key>areas</key>
@@ -5605,7 +5605,7 @@
 					<string>朗</string>
 				</array>
 				<key>city</key>
-				<string>林芝地</string>
+				<string>林芝地区</string>
 			</dict>
 		</array>
 		<key>state</key>

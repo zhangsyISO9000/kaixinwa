@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property(weak,nonatomic)id<QKAlertViewDelegate>delegate;
 @property(copy,nonatomic)NSString * updateType;
+@property (weak, nonatomic) IBOutlet UILabel *notiLabel;
 @property(strong,nonatomic)HMCommonLabelItem * item;
 -(void)hide;
 -(void)showInView:(UIView *)view;

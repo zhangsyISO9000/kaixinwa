@@ -68,7 +68,7 @@
     NSDictionary* params = [self getLoginParams];
     [QKHttpTool post:LoginInterface params:params success:^(id responseObj) {
         [MBProgressHUD hideHUD];
-        DCLog(@"%@",responseObj);
+        DCLog(@"---%@",responseObj);
         QKReturnResult * results = [QKReturnResult objectWithKeyValues:responseObj];
         NSString * code = [results.code stringValue];
         

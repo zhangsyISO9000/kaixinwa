@@ -26,6 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = QKGlobalBg;
+    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"kaixinwa"]];
 //    [self creatUI];
     UITableView * tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);

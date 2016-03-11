@@ -28,4 +28,12 @@
     return isMatch;
     
 }
++(BOOL)checkStringLength:(NSString *)string
+{
+//    NSString * pattern = @"^[A-Za-z0-9\u4e00-\u9fa5\\s]{1,16}";
+    NSString * pattern = @"^.{1,16}";
+    NSPredicate * pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",pattern];
+    BOOL isMatch = [pred evaluateWithObject:string];
+    return isMatch;
+}
 @end

@@ -9,6 +9,7 @@
 #import "QKAboutKaixinwaViewController.h"
 
 @interface QKAboutKaixinwaViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 
 @end
 
@@ -18,6 +19,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"关于开心蛙";
+    NSDictionary *bundleDic = [[NSBundle mainBundle] infoDictionary];
+    NSString * currentVersion = [bundleDic objectForKey:@"CFBundleShortVersionString"];
+    self.versionLabel.text = currentVersion;
     
 }
 

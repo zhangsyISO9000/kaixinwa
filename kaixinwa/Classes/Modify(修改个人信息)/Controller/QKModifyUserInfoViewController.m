@@ -21,6 +21,7 @@
 #import "UIImageView+WebCache.h"
 #import "QKAlertView.h"
 #import "QKGetHappyPeaTool.h"
+#import "QKCheckString.h"
 
 
 #define IS_IOS8 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8)
@@ -390,12 +391,22 @@
 {
     NSString * inputString = self.alvCustom.textField.text;
     NSCharacterSet * set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    
+    
     //判断是否为空格或者空串
     if ([[inputString stringByTrimmingCharactersInSet:set] length]==0) {
         self.alvCustom.submitButton.enabled = NO;
     }else{
-        self.alvCustom.submitButton.enabled = YES;
+        if ([QKCheckString checkStringLength:inputString]) {
+            self.alvCustom.submitButton.enabled = YES;
+            self.alvCustom.notiLabel.hidden = YES;
+        }else{
+            self.alvCustom.submitButton.enabled = NO;
+            self.alvCustom.notiLabel.hidden = NO;
+        }
     }
+    
+    
     
 }
 

@@ -13,6 +13,7 @@
 #import "QKAccountTool.h"
 #import "QKAccount.h"
 #import "QKLoginViewController.h"
+#import "QKSettingViewController.h"
 
 @interface HMCommonViewController ()
 @property (nonatomic, strong) NSMutableArray *groups;
@@ -87,7 +88,7 @@
     HMCommonGroup *group = self.groups[indexPath.section];
     HMCommonItem *item = group.items[indexPath.row];
     
-    if (![QKAccountTool readAccount]) {
+    if (![QKAccountTool readAccount]&&![self isKindOfClass:[QKSettingViewController class]]) {
         QKLoginViewController * loginVc = [[QKLoginViewController alloc]init];
         UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:loginVc];
         [nav setModalTransitionStyle:UIModalTransitionStyleCoverVertical];

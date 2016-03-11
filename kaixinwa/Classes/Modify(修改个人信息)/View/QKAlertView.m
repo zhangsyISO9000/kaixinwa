@@ -16,6 +16,7 @@
     if (self) {
         self = [[[NSBundle mainBundle] loadNibNamed:@"QKAlertView" owner:self options:nil] objectAtIndex:0];
         [self.submitButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
+        self.notiLabel.hidden = YES;
     }
     return self;
 }

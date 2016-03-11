@@ -14,4 +14,6 @@
 
 /** 匹配用户密码6-18位数字和字母组合*/
 + (BOOL)checkPassword:(NSString *) password;
+// 匹配字符串输入长度为1~21个
++(BOOL)checkStringLength:(NSString *)string;
 @end
