@@ -333,8 +333,7 @@
 #pragma mark - KIZImageScrollViewDataSource
 - (NSUInteger)numberOfImageInScrollView:(KIZImageScrollView *)scrollView
 {
-    //暂时写死了为两个
-    return 2;
+    return self.lunbos.count;
 }
 
 - (void)scrollView:(KIZImageScrollView *)scrollView imageAtIndex:(NSUInteger)index forImageView:(UIImageView *)imageView

@@ -21,7 +21,7 @@
 
 @interface QKProfileView()
 
-@property (nonatomic , weak)UILabel * nameLabel;
+@property (nonatomic , strong)UILabel * nameLabel;
 //@property(nonatomic , weak)UILabel * schoolInfo;
 //@property(nonatomic , weak)UILabel * signature;
 @property (nonatomic , weak)UIImageView * iconBG;
@@ -89,6 +89,7 @@
         if (account) {
             //昵称
             UILabel * nameLabel = [[UILabel alloc]init];
+            nameLabel.textAlignment = NSTextAlignmentCenter;
             nameLabel.font = [UIFont systemFontOfSize:17];
             [nameLabel setTextColor:[UIColor blackColor]];
             if ([account.user_name isEqualToString:@""]||account.user_name == nil) {
@@ -155,7 +156,9 @@
 
 -(void)changeUserName:(NSNotification *)noti
 {
-    self.nameLabel.size = [noti.userInfo[@"user_name"] sizeWithAttributes:@{NSFontAttributeName:self.nameLabel.font}];
+    
+    CGSize size = CGSizeMake(QKScreenWidth, 21);
+    self.nameLabel.size = size;
     self.nameLabel.x = (self.width - self.nameLabel.width)/2;
     self.nameLabel.text = noti.userInfo[@"user_name"];
 }

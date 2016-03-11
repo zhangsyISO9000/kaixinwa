@@ -66,6 +66,8 @@
     [self.view endEditing:YES];
     [MBProgressHUD showMessage:@"登录中..."];
     NSDictionary* params = [self getLoginParams];
+//    DCLog(@"%@",LoginInterface);
+    
     [QKHttpTool post:LoginInterface params:params success:^(id responseObj) {
         [MBProgressHUD hideHUD];
         DCLog(@"---%@",responseObj);

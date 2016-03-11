@@ -95,7 +95,9 @@
 //    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/plain",@"text/json", @"application/json", @"text/javascript", nil];
     
         // 3.发送POST请求
-        [mgr POST:UploadAvatarInterface parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+//    头像上传接口 http://101.200.173.111/kaixinwa2.0/kxwaapi.php/User/upload_header
+    DCLog(@"----%@",UploadAvatarInterface);
+        [mgr POST:@"http://101.200.173.111/kaixinwa2.0/kxwaapi.php/user/upload_header" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
             NSData *data=UIImagePNGRepresentation(image);
             // 拼接文件参数
             [formData appendPartWithFileData:data name:@"file" fileName:@"xxxx.png" mimeType:@"image/png"];

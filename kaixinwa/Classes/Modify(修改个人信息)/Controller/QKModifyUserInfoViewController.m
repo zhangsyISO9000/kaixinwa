@@ -370,6 +370,7 @@
     [MBProgressHUD showMessage:@"正在上传..."];
     NSDictionary * param = @{@"uid" : [QKAccountTool readAccount].uid};
     [QKHttpTool sendNickPicWithImage:tempImage params:param success:^(id responseObj) {
+        NSLog(@"%@",responseObj);
         NSDictionary * dataDic = responseObj[@"data"];
         NSString * header = dataDic[@"header"];
         //更新头像URL
