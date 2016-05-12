@@ -106,7 +106,9 @@
             QKResetPasswordViewController * resetVc = [[QKResetPasswordViewController alloc]init];
             QKResetParam * resetParam = [[QKResetParam alloc]init];
             resetParam.uid = result.data.uid;
+            resetParam.token = result.data.token;
             resetParam.telephone = result.data.telephone;
+            
             resetVc.resetParam = resetParam;
             [self.navigationController pushViewController:resetVc animated:YES];
         }else{

@@ -105,8 +105,11 @@
     NSString * currentVersion = [bundleDic objectForKey:@"CFBundleShortVersionString"];
     //获取服务器版本
     NSDictionary * params = @{@"device_type":@"ios1",@"app_version":currentVersion};
-    [QKHttpTool get:@"http://101.200.173.111/kaixinwa2.0/index.php/kxwapi/index/version" params:params success:^(id responseObj) {
+//    http://101.200.173.111/kaixinwa2.0/index.php/kxwapi/index/version
+    [QKHttpTool get:@"http://kaixinwa.qkhl.net/index.php/kxwapi/index/version" params:params success:^(id responseObj) {
+        
         QKVersionInfo * version = [QKVersionInfo objectWithKeyValues:responseObj];
+        DCLog(@"%@",version.data);
         [QKVersionInfoTool save:version];
     } failure:^(NSError *error) {
         DCLog(@"---%@",error);

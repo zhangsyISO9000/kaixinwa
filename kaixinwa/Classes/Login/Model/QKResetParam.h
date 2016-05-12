@@ -11,4 +11,5 @@
 @interface QKResetParam : NSObject
 @property(nonatomic , strong)NSNumber * uid;
 @property(nonatomic ,copy)NSString * telephone;
+@property(nonatomic ,copy)NSString * token;
 @end

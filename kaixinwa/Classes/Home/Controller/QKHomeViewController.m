@@ -56,6 +56,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"kaixinwa"]];
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageName:@"meiriqiandao" highImageName:@"meiriqiandao_sel" target:self action:@selector(signEveryday:)];
@@ -237,12 +238,8 @@
     imagePlayerView.frame = CGRectMake(0, 0, self.view.width, 160);
     imagePlayerView.kizScrollDataSource = self;
     imagePlayerView.kizScrollDelegate = self;
-//    imagePlayerView.pageControlPosition = ICPageControlPosition_BottomRight;
-//    imagePlayerView.pageControl.pageIndicatorTintColor = [UIColor whiteColor];
-//    imagePlayerView.pageControl.currentPageIndicatorTintColor = [UIColor greenColor];
     self.imagePlayerView = imagePlayerView;
     [scrollView addSubview:imagePlayerView];
-    
     UIPageControl * pageControl = [[UIPageControl alloc]init];
     pageControl.pageIndicatorTintColor = [UIColor whiteColor];
     pageControl.currentPageIndicatorTintColor = [UIColor greenColor];

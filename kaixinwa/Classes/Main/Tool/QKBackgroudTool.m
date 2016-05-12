@@ -24,6 +24,7 @@
     
     CGImageRef outImage = [context createCGImage:outputImage
                                              fromRect:inputImage.extent];
+    
     return [UIImage imageWithCGImage:outImage];
     
 }

@@ -44,13 +44,13 @@
         [MBProgressHUD showError:@"密码格式不正确"];
         return;
     }
-    
     if ([self.passwordTF.text isEqualToString:self.rePasswordTF.text]) {
         [MBProgressHUD showMessage:@"提交中"];
         NSString * md5Password = [QKHttpTool md5HexDigest:self.passwordTF.text];
-        NSDictionary * params = @{@"password":md5Password,@"uid":self.resetParam.uid,@"telephone":self.resetParam.telephone};
+        NSDictionary * params = @{@"password":md5Password,@"uid":self.resetParam.uid,@"telephone":self.resetParam.telephone, @"token": self.resetParam.token};
+        NSLog(@"%@",params);
         [QKHttpTool post:ModPwdInterface params:params success:^(id responseObj) {
-            DCLog(@"-------%@",responseObj);
+            
             QKReturnResult * result = [QKReturnResult objectWithKeyValues:responseObj];
             NSString* code = [result.code stringValue];
             [MBProgressHUD hideHUD];
