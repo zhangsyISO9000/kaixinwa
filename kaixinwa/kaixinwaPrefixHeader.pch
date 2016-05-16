@@ -59,7 +59,6 @@
 //http://101.200.173.111/kaixinwa2.0/kxwaapi.php/Index/login
 
 #define LoginInterface [NSString stringWithFormat:@"%@%@/%@",kInterfaceStart,kVersion,xLoginNew]
-
 //注册接口
 //#define RegisteInterface @"http://101.200.173.163/qkhl_api/index.php/kxwapi/User/regist"
 #define xRegiste @"kxwaapi.php/User/regist"
